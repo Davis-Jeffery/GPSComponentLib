@@ -3,8 +3,8 @@ A Component Library for GPS
 # Installing solution
 you cannot run npm install, because it will try and install the app-components whichisn’t built yet — and you can’t build the components until you’ve installed the npm packages. The solution is to edit package.json to remove the reference to the dist/gps-components, delete package-lock.json, then run
 1. `npm install`
-1. `ng build ars-components`
-1. `npm install dist/ars-components`
+1. `ng build gps-components`
+1. `npm install dist/gps-components`
 # Create Components
 1. generate your reusable component `ng g c componentName — project=gps-components`
 1. add your generated component to gps-component.module.ts  in the `exports` array.
