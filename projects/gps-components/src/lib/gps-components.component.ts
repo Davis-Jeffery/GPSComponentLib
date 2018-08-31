@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'gps-gps-components',
+  selector: 'gps-components',
   template: `
     <p>
       gps-components works!
     </p>
   `,
-  styles: []
+  styles: [],
 })
 export class GpsComponentsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
