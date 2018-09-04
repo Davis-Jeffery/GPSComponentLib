@@ -1,0 +1,8 @@
+@import './_sizes.scss';
+
+.site-frame {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #fafafa;
+}

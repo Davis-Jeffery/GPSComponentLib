@@ -96,6 +96,7 @@
             "styles": [
               "src/styles.scss"
             ],
+            
             "scripts": [],
             "assets": [
               "src/favicon.ico",
@@ -204,11 +205,14 @@
               "projects/gpsapp/src/assets"
             ],
             "styles": [
-              {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-              },
-              "projects/gpsapp/src/styles.scss"
+              "projects/gpsapp/src/styles.scss",
+              "projects/gpsapp/src/atom/_mat-theme.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/gpsapp/src/atom/partials"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -256,11 +260,14 @@
             "tsConfig": "projects/gpsapp/tsconfig.spec.json",
             "karmaConfig": "projects/gpsapp/karma.conf.js",
             "styles": [
-              {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-              },
-              "projects/gpsapp/src/styles.scss"
+              "projects/gpsapp/src/styles.scss",
+              "projects/gpsapp/src/atom/_mat-theme.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/gpsapp/src/atom/partials"
+              ]
+            },
             "scripts": [],
             "assets": [
               "projects/gpsapp/src/favicon.ico",
