@@ -3,10 +3,21 @@ import {
   MatButtonModule,
   MatCheckboxModule,
   MatToolbarModule,
+  MatInputModule,
 } from '@angular/material';
 
 @NgModule({
-  imports: [MatButtonModule, MatCheckboxModule, MatToolbarModule],
-  exports: [MatButtonModule, MatCheckboxModule, MatToolbarModule],
+  imports: [
+    MatButtonModule,
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatInputModule,
+  ],
+  exports: [
+    MatButtonModule,
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatInputModule,
+  ],
 })
 export class LibMaterialModule {}

@@ -6,12 +6,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LibMaterialModule } from './lib-material.module';
 import { ModalComponent } from './modal/modal.component';
 import { AppMainNav } from './app-main-nav/app-main-nav.component';
+import { Reminders } from './app-main-nav/reminders/reminders.component';
+import { Assignments } from './app-main-nav/assignments/assignments.component';
+import { ShellSearch } from './app-main-nav/shell-search/shell-search.component';
 
 @NgModule({
   imports: [BrowserModule, BrowserAnimationsModule, LibMaterialModule],
   declarations: [
     GpsComponentsComponent,
     AppMainNav,
+    Reminders,
+    ShellSearch,
+    Assignments,
     TableComponent,
     ModalComponent,
   ],

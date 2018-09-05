@@ -7,7 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AppMainNav implements OnInit {
   @Input()
-  background: string;
+  background: string = 'primary';
+  @Input()
+  institutionName: string = 'Institution Name';
+
   constructor() {}
 
   ngOnInit() {}
