@@ -9,6 +9,9 @@ import { AppMainNav } from './app-main-nav/app-main-nav.component';
 import { Reminders } from './app-main-nav/reminders/reminders.component';
 import { Assignments } from './app-main-nav/assignments/assignments.component';
 import { ShellSearch } from './app-main-nav/shell-search/shell-search.component';
+import { CommonModule } from '@angular/common';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { A11yModule } from '@angular/cdk/a11y';
 
 @NgModule({
   imports: [BrowserModule, BrowserAnimationsModule, LibMaterialModule],
@@ -20,6 +23,10 @@ import { ShellSearch } from './app-main-nav/shell-search/shell-search.component'
     Assignments,
     TableComponent,
     ModalComponent,
+    CommonModule,
+    BrowserModule,
+    OverlayModule,
+    A11yModule,
   ],
   exports: [GpsComponentsComponent, AppMainNav, TableComponent, ModalComponent],
 })

@@ -10,9 +10,13 @@ $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
 }
 
 .main-header-container {
-  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // flex-shrink: 1;
   box-shadow: $el-3;
   height: 56px;
+
   .sidebar-button {
     margin-right: 32px;
   }

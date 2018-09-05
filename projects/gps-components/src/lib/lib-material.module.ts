@@ -4,7 +4,9 @@ import {
   MatCheckboxModule,
   MatToolbarModule,
   MatInputModule,
+  MatSelectModule,
 } from '@angular/material';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   imports: [
@@ -12,12 +14,16 @@ import {
     MatCheckboxModule,
     MatToolbarModule,
     MatInputModule,
+    MatSelectModule,
+    OverlayModule,
   ],
   exports: [
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
     MatInputModule,
+    MatSelectModule,
+    OverlayModule,
   ],
 })
 export class LibMaterialModule {}
