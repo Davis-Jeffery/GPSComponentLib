@@ -8,13 +8,24 @@ import { ModalComponent } from './modal/modal.component';
 import { AppMainNav } from './app-main-nav/app-main-nav.component';
 import { Reminders } from './app-main-nav/reminders/reminders.component';
 import { Assignments } from './app-main-nav/assignments/assignments.component';
-import { ShellSearch } from './app-main-nav/shell-search/shell-search.component';
+import {
+  ShellSearch,
+  SelectOption,
+} from './app-main-nav/shell-search/shell-search.component';
 import { CommonModule } from '@angular/common';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { A11yModule } from '@angular/cdk/a11y';
 
 @NgModule({
-  imports: [BrowserModule, BrowserAnimationsModule, LibMaterialModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    LibMaterialModule,
+    BrowserModule,
+    OverlayModule,
+    A11yModule,
+    CommonModule,
+  ],
   declarations: [
     GpsComponentsComponent,
     AppMainNav,
@@ -23,10 +34,7 @@ import { A11yModule } from '@angular/cdk/a11y';
     Assignments,
     TableComponent,
     ModalComponent,
-    CommonModule,
-    BrowserModule,
-    OverlayModule,
-    A11yModule,
+    SelectOption,
   ],
   exports: [GpsComponentsComponent, AppMainNav, TableComponent, ModalComponent],
 })
