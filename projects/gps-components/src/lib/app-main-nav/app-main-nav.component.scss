@@ -3,16 +3,6 @@ $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
   0px 1px 8px rgba(0, 0, 0, 0.12);
 
 .gpcl--main-header-container {
-.icon {
-  height: 24px;
-  width: 24px;
-
-  path {
-    fill: #ffffff;
-  }
-}
-
-.main-header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,14 +21,18 @@ $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
   .search-inputs {
     flex: auto;
   }
+  .gpcl--icon-spacing {
+    margin-right: rem(12);
+  }
 
-  .end-buttons {
+  .end-icons {
     margin-left: rem(64);
   }
 
   .sidebar-button {
     margin-right: 32px;
   }
+
   .institution-name {
     font-size: 18px;
     font-weight: 400;
@@ -56,12 +50,10 @@ $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
   .row {
     display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-
     .icon-container {
       display: flex;
       align-items: center;
       padding: 16px 0 16px 16px;
-
       svg {
         width: 30px;
         height: 30px;

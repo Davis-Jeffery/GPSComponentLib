@@ -6,30 +6,48 @@
   .mat-form-field-appearance-outline .mat-form-field-outline-end {
     background: rgba(255, 255, 255, 0.1);
   }
-  .gpcl--input-icon {
-    margin-right: rem(12);
-    .icon {
-      width: rem(24);
-      height: rem(24);
-      path {
-        fill: rgba(255, 255, 255, 0.54);
+  .gpcl--search-input {
+    font-size: rem(16);
+    &.select {
+      .mat-form-field-infix {
+        padding: rem(15) 0;
+      }
+      .mat-select-arrow-wrapper {
+        display: inline-block;
       }
     }
+  }
+  .gpcl--input-icon {
+    margin-right: rem(12);
+    width: rem(24);
+    height: rem(24);
+    fill: rgba(0, 0, 0, 0.54);
     &.white {
-      .icon {
-        path {
-          fill: white;
-        }
-      }
+      fill: white;
     }
   }
   .mat-form-field-outline {
     color: rgba(255, 255, 255, 0.68) !important;
   }
+
   .mat-form-field-infix {
     border-top: none;
   }
   .mat-form-field-appearance-outline .mat-form-field-infix {
     padding: rem(12) 0;
+    display: flex;
+    align-items: center;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+    display: none;
+  }
+  .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0;
+  }
+  .mat-form-field-label-wrapper {
+    display: none;
   }
 }

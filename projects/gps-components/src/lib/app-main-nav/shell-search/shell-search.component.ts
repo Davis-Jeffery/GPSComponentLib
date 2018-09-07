@@ -1,13 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  ViewEncapsulation,
-  ViewChild,
-} from '@angular/core';
-import { MatFormField } from '@angular/material';
-// import { Overlay, OverlayConfig, OverlayRef } from '@angular/cdk/overlay';
-// import { Highlightable, ActiveDescendantKeyManager } from '@angular/cdk/a11y';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'gps-shell-search',
@@ -16,11 +7,15 @@ import { MatFormField } from '@angular/material';
   encapsulation: ViewEncapsulation.None,
 })
 export class ShellSearch implements OnInit {
-  @ViewChild('searchInput')
-  input: MatFormField;
-  constructor() {}
+  public searchOptions = [
+    {
+      value: 'Cusomters',
+    },
+    { value: 'Loan Accounts' },
+    { value: 'Bank Accounts' },
+  ];
+  public selectedOption = this.searchOptions[0].value;
 
-  ngOnInit() {
-    this.input.updateOutlineGap();
-  }
+  constructor() {}
+  ngOnInit() {}
 }
