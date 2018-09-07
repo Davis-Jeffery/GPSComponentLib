@@ -1,6 +1,33 @@
-<button mat-icon-button>
+<button mat-icon-button [matMenuTriggerFor]="remindersMenu">
   <svg class="icon" viewBox="0 0 24 24">
     <path class="icon-path" d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21"
     />
   </svg>
 </button>
+
+<mat-menu #remindersMenu="matMenu" overlapTrigger="false" class="gpcl--icon-overlay">
+  <div class="header">Assignments</div>
+
+  <div class="row">
+    <span class="icon-container">
+      <button mat-icon-button>
+        <svg viewBox="0 0 24 24">
+          <path d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2,4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+          />
+        </svg>
+      </button>
+    </span>
+    <span class="content-container">
+      <div class="title">
+        <span>Call <a>Dwight K Schrute</a></span><span>3:00 PM - 4:00 PM</span>
+      </div>
+      <div class="body">
+        Here we're limited by the time we have. We artists are a different breed of people. We're a happy bunch. I'm gonna start
+        with a little Alizarin crimson and a touch of Prussian blue
+      </div>
+    </span>
+  </div>
+  <div class="footer">
+    <button mat-stroked-button color="primary">See All</button>
+  </div>
+</mat-menu>

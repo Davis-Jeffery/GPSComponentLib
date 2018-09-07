@@ -1,6 +1,33 @@
-<button mat-icon-button class="something">
+<button mat-icon-button [matMenuTriggerFor]="remindersMenu">
   <svg class="icon" viewBox="0 0 24 24">
-    <path d="M18,19H6V17.6C6,15.6 10,14.5 12,14.5C14,14.5 18,15.6 18,17.6M12,7A3,3 0 0,1 15,10A3,3 0 0,1 12,13A3,3 0 0,1 9,10A3,3 0 0,1 12,7M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"
+    <path class="icon-path" d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21"
     />
   </svg>
 </button>
+
+<mat-menu #remindersMenu="matMenu" overlapTrigger="false" class="gpcl--icon-overlay">
+  <div role="listbox" aria-label="complete assignments" (click)="$event.stopPropagation();">
+    <div class="header">Assignments</div>
+    <div class="row" *ngFor="let assignment of assignments" [attr.aria-label]="assignment.title">
+      <span class="icon-container" [ngClass]="{'active': assignment.isComplete}">
+        <button mat-icon-button (click)="assignment.isComplete =! assignment.isComplete">
+          <svg viewBox="0 0 24 24">
+            <path d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2,4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
+            />
+          </svg>
+        </button>
+      </span>
+      <span class="content-container">
+        <div class="title">
+          <span>{{assignment.action}} <a>{{assignment.account}}</a></span>
+          <span>{{assignment.time}}</span>
+        </div>
+        <div class="body">{{assignment.assignmentDetails}}</div>
+      </span>
+    </div>
+    <div class="footer">
+      <button mat-stroked-button color="primary">See All</button>
+    </div>
+  </div>
+
+</mat-menu>

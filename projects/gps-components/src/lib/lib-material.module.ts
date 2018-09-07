@@ -5,8 +5,8 @@ import {
   MatToolbarModule,
   MatInputModule,
   MatSelectModule,
+  MatMenuModule,
 } from '@angular/material';
-import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatToolbarModule,
     MatInputModule,
     MatSelectModule,
-    OverlayModule,
+    MatMenuModule,
   ],
   exports: [
     MatButtonModule,
@@ -23,7 +23,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatToolbarModule,
     MatInputModule,
     MatSelectModule,
-    OverlayModule,
+    MatMenuModule,
   ],
 })
 export class LibMaterialModule {}

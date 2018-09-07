@@ -8,5 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class Reminders implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 }
