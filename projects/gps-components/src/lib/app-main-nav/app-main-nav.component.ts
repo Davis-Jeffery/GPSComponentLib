@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+// import { Reminder } from './reminders/reminders.component';
 
 @Component({
   selector: 'gps-app-main-nav',
@@ -11,8 +12,12 @@ export class AppMainNav implements OnInit {
   background: string = 'primary';
   @Input()
   institutionName: string = 'Institution Name';
+  @Input()
+  reminders: Array<any>;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.reminders);
+  }
 }

@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Favorite Animal</h1>
+<div mat-dialog-content>
+  My favorite animal is: something awesome
+  <ul>
+    <li *ngFor="let data of overlayData">
+      <span>{{data.id}}</span>
+    </li>
+  </ul>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button cdkFocusInitial>Ok</button>
+</div>
