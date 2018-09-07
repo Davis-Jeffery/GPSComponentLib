@@ -1,0 +1,35 @@
+@import './_sizes.scss';
+
+.gpcl--search-inputs-wrap {
+  .mat-form-field-appearance-outline .mat-form-field-outline-start,
+  .mat-form-field-appearance-outline .mat-form-field-outline-gap,
+  .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .gpcl--input-icon {
+    margin-right: rem(12);
+    .icon {
+      width: rem(24);
+      height: rem(24);
+      path {
+        fill: rgba(255, 255, 255, 0.54);
+      }
+    }
+    &.white {
+      .icon {
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+  .mat-form-field-outline {
+    color: rgba(255, 255, 255, 0.68) !important;
+  }
+  .mat-form-field-infix {
+    border-top: none;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: rem(12) 0;
+  }
+}
