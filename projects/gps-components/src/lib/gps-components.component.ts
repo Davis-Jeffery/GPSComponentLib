@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
       gps-components works!
     </p>
   `,
-  styleUrls: ['./styles.scss'],
+  styles: [],
 })
 export class GpsComponentsComponent implements OnInit {
   constructor() {}

@@ -1,21 +1,30 @@
+@import '../../../lib-atom/partials/_sizes.scss';
 $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
   0px 1px 8px rgba(0, 0, 0, 0.12);
 
-.icon {
-  height: 24px;
-  width: 24px;
-  .icon-path {
-    fill: #ffffff;
-  }
-}
-
-.main-header-container {
+.gpcl--main-header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // flex-shrink: 1;
   box-shadow: $el-3;
   height: 56px;
+  .icon {
+    height: rem(24);
+    width: rem(24);
+    .icon-path {
+      fill: #ffffff;
+    }
+  }
+  .left-of-header {
+    margin-right: rem(64);
+  }
+  .search-inputs {
+    flex: auto;
+  }
+
+  .end-buttons {
+    margin-left: rem(64);
+  }
 
   .sidebar-button {
     margin-right: 32px;

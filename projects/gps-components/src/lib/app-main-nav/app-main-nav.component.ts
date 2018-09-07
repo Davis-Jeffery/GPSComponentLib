@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 @Component({
   selector: 'gps-app-main-nav',
   templateUrl: './app-main-nav.component.html',
