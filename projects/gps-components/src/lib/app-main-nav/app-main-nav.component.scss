@@ -3,6 +3,16 @@ $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
   0px 1px 8px rgba(0, 0, 0, 0.12);
 
 .gpcl--main-header-container {
+.icon {
+  height: 24px;
+  width: 24px;
+
+  path {
+    fill: #ffffff;
+  }
+}
+
+.main-header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,5 +42,79 @@ $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
   .institution-name {
     font-size: 18px;
     font-weight: 400;
+  }
+}
+
+.gpcl--icon-overlay {
+  .header {
+    padding: 18px;
+    display: flex;
+    color: rgba(0, 0, 0, 0.87);
+    background: rgba(0, 0, 0, 0.04);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  .row {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    .icon-container {
+      display: flex;
+      align-items: center;
+      padding: 16px 0 16px 16px;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        fill: rgba(0, 0, 0, 0.12);
+      }
+
+      &.active {
+        svg {
+          fill: #1976d2;
+        }
+      }
+    }
+
+    .title {
+      padding: 16px 16px 0;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span:first-of-type {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.87);
+
+        a {
+          color: #1976d2;
+        }
+      }
+      span:last-of-type {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.54);
+      }
+    }
+    .body {
+      padding: 16px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.54);
+    }
+  }
+
+  .footer {
+    padding: 16px;
+    .mat-stroked-button {
+      width: 100%;
+    }
+  }
+
+  &.mat-menu-panel {
+    max-width: 500px;
+  }
+
+  .mat-menu-content:not(:empty) {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
