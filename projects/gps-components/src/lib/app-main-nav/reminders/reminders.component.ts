@@ -36,16 +36,16 @@ export class RemindersComponent implements OnInit {
   @Input()
   open: boolean = false;
   @Input()
-  maxWidth: string = '600px';
-  // @Input()
-  // maxHeight: string = '500px';
+  maxWidth: string;
+  @Input()
+  maxHeight: string;
   minWidth: string;
   @Input()
   minHeight: string;
-  // @Input()
-  // height: string = '400px';
-  // @Input()
-  // width: string = '500px';
+  @Input()
+  height: string = '400px';
+  @Input()
+  width: string = '500px';
   @Input()
   reminders: Array<any>;
 
@@ -63,8 +63,8 @@ export class RemindersComponent implements OnInit {
       // maxHeight: this.maxHeight,
       minWidth: this.minWidth,
       minHeight: this.minHeight,
-      // height: this.height,
-      // width: this.width,
+      height: this.height,
+      width: this.width,
       position: {
         top: '68px',
         right: '50px',
@@ -73,4 +73,13 @@ export class RemindersComponent implements OnInit {
       hasBackdrop: false,
     });
   }
+}
+
+export class overlayActionButton {
+  constructor(
+    public title: string,
+    public link: string,
+    public icon: boolean,
+    public svg?: string,
+  ) {}
 }

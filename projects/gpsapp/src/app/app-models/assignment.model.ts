@@ -1,9 +1,9 @@
-export class Reminder {
+export class Assignment {
   constructor(
     public id: string,
     public isComplete: boolean,
     public title: string,
-    public desctription: string,
+    public description: string,
     public action?: string,
   ) {}
 }

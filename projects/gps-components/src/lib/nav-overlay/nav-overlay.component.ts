@@ -17,10 +17,7 @@ export class NavOverlayComponent implements OnInit {
     this.overlayDataItems = overlayData.data;
   }
 
-  ngOnInit() {
-    console.log(this.overlayData);
-    console.log(this.overlayData.title);
-  }
+  ngOnInit() {}
 
   onNoClick(): void {
     this.dialogRef.close();
