@@ -7,18 +7,25 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
   styleUrls: ['./nav-overlay.component.scss'],
 })
 export class NavOverlayComponent implements OnInit {
-  public goodResponseData = [];
+  public dialogTitle: string;
+  public overlayDataItems: Array<any>;
   constructor(
     public dialogRef: MatDialogRef<NavOverlayComponent>,
-    @Inject(MAT_DIALOG_DATA) public overlayData: Array<any>,
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public overlayData,
+  ) {
+    this.dialogTitle = overlayData.title;
+    this.overlayDataItems = overlayData.data;
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.overlayData);
+    console.log(this.overlayData.title);
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
-
+  // this is needing to be defined from the gpsapp or whatever app may be using out component.
   public assignments = [
     {
       isComplete: true,

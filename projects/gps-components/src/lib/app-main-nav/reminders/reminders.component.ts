@@ -1,4 +1,10 @@
-import { Component, OnInit, Inject, Input, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Inject,
+  Input,
+  ViewEncapsulation,
+} from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { NavOverlayComponent } from '../../nav-overlay/nav-overlay.component';
 
@@ -45,13 +51,14 @@ export class RemindersComponent implements OnInit {
 
   constructor(public dialog: MatDialog) {}
 
-  ngOnInit() {
-    console.log(this.reminders);
-  }
+  ngOnInit() {}
 
   openDialog() {
     this.dialog.open(NavOverlayComponent, {
-      data: this.reminders,
+      data: {
+        data: this.reminders,
+        title: 'Assignments',
+      },
       maxWidth: this.maxWidth,
       // maxHeight: this.maxHeight,
       minWidth: this.minWidth,
@@ -62,6 +69,7 @@ export class RemindersComponent implements OnInit {
         top: '68px',
         right: '50px',
       },
+
       hasBackdrop: false,
     });
   }

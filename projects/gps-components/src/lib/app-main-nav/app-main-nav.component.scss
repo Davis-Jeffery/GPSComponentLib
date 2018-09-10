@@ -1,3 +1,6 @@
+// this should be moved into the nav overlay component now.
+//The only things here should be things styling the
+//main-nav or once of it's child components.
 @import '../../../lib-atom/partials/_sizes.scss';
 $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
   0px 1px 8px rgba(0, 0, 0, 0.12);
@@ -112,5 +115,5 @@ $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
 }
 
 .mat-dialog-container {
-  padding: 0 !important;  
+  padding: 0 !important;
 }
