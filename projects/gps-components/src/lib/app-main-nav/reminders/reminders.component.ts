@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Component, OnInit, Inject, Input, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { NavOverlayComponent } from '../../nav-overlay/nav-overlay.component';
 
@@ -28,17 +28,18 @@ export class CustomerAccount {
 })
 export class RemindersComponent implements OnInit {
   @Input()
-  maxWidth: string = '400px';
+  open: boolean = false;
   @Input()
-  maxHeight: string = '500px';
-  @Input()
+  maxWidth: string = '600px';
+  // @Input()
+  // maxHeight: string = '500px';
   minWidth: string;
   @Input()
   minHeight: string;
-  @Input()
-  height: string = '400px';
-  @Input()
-  width: string = '500px';
+  // @Input()
+  // height: string = '400px';
+  // @Input()
+  // width: string = '500px';
   @Input()
   reminders: Array<any>;
 
@@ -52,11 +53,11 @@ export class RemindersComponent implements OnInit {
     this.dialog.open(NavOverlayComponent, {
       data: this.reminders,
       maxWidth: this.maxWidth,
-      maxHeight: this.maxHeight,
+      // maxHeight: this.maxHeight,
       minWidth: this.minWidth,
       minHeight: this.minHeight,
-      height: this.height,
-      width: this.width,
+      // height: this.height,
+      // width: this.width,
       position: {
         top: '68px',
         right: '50px',

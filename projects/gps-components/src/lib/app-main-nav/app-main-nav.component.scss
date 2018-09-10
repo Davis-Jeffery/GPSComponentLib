@@ -40,7 +40,7 @@ $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
 }
 
 .gpcl--icon-overlay {
-  .header {
+  h1 {
     padding: 18px;
     display: flex;
     color: rgba(0, 0, 0, 0.87);
@@ -109,4 +109,8 @@ $el-3: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.14),
     padding-top: 0;
     padding-bottom: 0;
   }
+}
+
+.mat-dialog-container {
+  padding: 0 !important;  
 }
