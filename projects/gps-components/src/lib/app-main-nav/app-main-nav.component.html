@@ -1,12 +1,11 @@
 <mat-toolbar class="gpcl--main-header-container" [color]="background">
   <div class="left-of-header">
-    <button mat-icon-button class="sidebar-button" color="primary">
+    <button mat-icon-button class="sidebar-button" color="primary" (click)="toggleAppsSidebar()">
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
         <path class="icon-path" d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z" /></svg>
     </button>
     <span class="institution-name">{{institutionName}}</span>
   </div>
-
   <gps-shell-search class="search-inputs"></gps-shell-search>
   <div class="end-icons">
     <gps-reminders [reminders]="reminders" class="gpcl--icon-spacing"></gps-reminders>

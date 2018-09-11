@@ -1,0 +1,79 @@
+@import '~@angular/material/theming';
+@import '../../../../lib-atom/partials/_sizes.scss';
+
+$primary: #1976d2;
+$primary-text: rgba(black, 0.87);
+$accent-text: rgba(black, 0.54);
+$primary-border-color: rgba(black, 0.12);
+
+.gpcl--sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: rem(24) rem(16);
+  border-bottom: rem(1) solid $primary-border-color;
+  .goldpoint-logo-circle {
+    border-radius: 100%;
+    border: rem(1) solid $primary;
+    margin-right: rem(24);
+    height: rem(64);
+    width: rem(64);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .logo {
+      width: rem(33);
+      height: rem(36);
+    }
+    svg {
+      width: rem(33);
+      height: rem(36);
+      fill: $primary;
+    }
+  }
+  .user-info {
+    .name,
+    .role {
+      display: block;
+    }
+    .name {
+      color: $primary-text;
+      font-weight: 500;
+      font-size: rem(24);
+      margin-bottom: rem(4);
+    }
+    .role {
+      color: $accent-text;
+      font-size: rem(14);
+      font-weight: 400;
+    }
+  }
+}
+
+.gpcl--links-section {
+  .gpcl--user-apps-list {
+    &.non-admin {
+      padding-top: 0px;
+    }
+    .app-link {
+      .link-icon,
+      .link-text {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .link-icon {
+        margin-right: rem(24);
+        svg {
+          width: rem(24);
+          height: rem(24);
+          fill: $accent-text;
+        }
+      }
+    }
+  }
+  .gpcl--nav-label {
+    font-size: rem(12);
+    color: $accent-text;
+    display: block;
+    padding: rem(16);
+  }
+}

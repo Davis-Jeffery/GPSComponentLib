@@ -1,8 +1,21 @@
+@import '~@angular/material/theming';
 @import './_sizes.scss';
 
-.site-frame {
+$primary-border-color: rgba(black, 0.12);
+.gpcl--site-frame {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background: #fafafa;
+  .gpcl--main-body-content {
+    flex: auto;
+  }
+  .sidebar-nav-container {
+    max-width: 288px;
+    width: 100%;
+    @include mat-elevation(2);
+  }
+}
+.mat-drawer-container {
+  background: none !important;
 }

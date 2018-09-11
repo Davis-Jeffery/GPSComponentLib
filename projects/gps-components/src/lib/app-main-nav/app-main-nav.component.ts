@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { MatDrawer } from '@angular/material';
 // import { Reminder } from './reminders/reminders.component';
 
 @Component({
@@ -14,10 +15,14 @@ export class AppMainNav implements OnInit {
   institutionName: string = 'Institution Name';
   @Input()
   reminders: Array<any>;
+  @Input()
+  appsSidebar: MatDrawer;
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.reminders);
+  ngOnInit() {}
+
+  toggleAppsSidebar() {
+    this.appsSidebar.toggle();
   }
 }

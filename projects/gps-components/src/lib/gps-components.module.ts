@@ -12,6 +12,7 @@ import { ShellSearch } from './app-main-nav/shell-search/shell-search.component'
 import { A11yModule } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
 import { NavOverlayComponent } from './nav-overlay/nav-overlay.component';
+import { AppsSidebarComponent } from './app-main-nav/apps-sidebar/apps-sidebar.component';
 
 @NgModule({
   imports: [
@@ -31,8 +32,15 @@ import { NavOverlayComponent } from './nav-overlay/nav-overlay.component';
     TableComponent,
     ModalComponent,
     NavOverlayComponent,
+    AppsSidebarComponent,
   ],
   entryComponents: [NavOverlayComponent],
-  exports: [GpsComponentsComponent, AppMainNav, TableComponent, ModalComponent],
+  exports: [
+    GpsComponentsComponent,
+    AppMainNav,
+    TableComponent,
+    ModalComponent,
+    AppsSidebarComponent,
+  ],
 })
 export class GpsComponentsModule {}
