@@ -49,29 +49,37 @@ export class RemindersComponent implements OnInit {
   @Input()
   reminders: Array<any>;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) {
+    console.log( dialog.openDialogs);
+  }
 
   ngOnInit() {}
 
   openDialog() {
-    this.dialog.open(NavOverlayComponent, {
-      data: {
-        data: this.reminders,
-        title: 'Assignments',
-      },
-      maxWidth: this.maxWidth,
-      // maxHeight: this.maxHeight,
-      minWidth: this.minWidth,
-      minHeight: this.minHeight,
-      height: this.height,
-      width: this.width,
-      position: {
-        top: '68px',
-        right: '50px',
-      },
+    if (!this.dialog.openDialogs.length) {
 
-      hasBackdrop: false,
-    });
+      this.dialog.open(NavOverlayComponent, {
+        data: {
+          data: this.reminders,
+          title: 'Reminders',
+        },
+        maxWidth: this.maxWidth,
+        // maxHeight: this.maxHeight,
+        minWidth: this.minWidth,
+        // minHeight: this.minHeight,
+        // height: this.height,
+        width: this.width,
+        position: {
+          top: '68px',
+          right: '50px',
+        },
+        autoFocus: false,
+        hasBackdrop: false,
+      });
+    }
+    else {
+      this.dialog.closeAll();
+    }
   }
 }
 
