@@ -26,17 +26,20 @@ export class AppComponent implements OnInit {
       new Reminder(
         '21323312',
         false,
-        'Checkout out of your teller Drawer',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Checkout Out of Your Teller Drawer',
+        undefined,
+        '9:00 AM - 5:00 PM'
       ),
     );
     this.reminders.push(
       new Reminder(
         '312324',
         false,
-        'call Susan By the end of the day',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         'Call',
+        'Dwight K Schrute',
+        '3:00 PM - 6:00 PM'
       ),
     );
 
