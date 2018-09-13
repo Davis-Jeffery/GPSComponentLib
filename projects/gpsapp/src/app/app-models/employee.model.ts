@@ -3,6 +3,7 @@ import { Reminder } from './reminder.model';
 import { AccessLevel } from './access-level.model';
 import { Collections } from './collections.model';
 import { Drawer } from './drawer.model';
+import { product } from './product.model';
 
 export class Employee {
   constructor(
@@ -10,7 +11,9 @@ export class Employee {
     public firstName: string,
     public middleName: string,
     public lastName: string,
-    public accessLevel: boolean,
+    public accessLevel: AccessLevel,
+    public globalProducts: Array<product>,
+    public AdminProducts: Array<product>,
     public reminders: Array<Reminder>,
     public assignments?: Array<Assignment>,
   ) {}
@@ -26,7 +29,7 @@ export function makeFullName(): string {
 
 export function getAccessLevel(level: AccessLevel): boolean {
   switch (level) {
-    case AccessLevel.Admin:
+    case AccessLevel.ADMIN:
       return true;
     case AccessLevel.COLLECTIONS_AGENT:
       return false;

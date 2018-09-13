@@ -1,0 +1,42 @@
+// Import all the tools needed to customize the theme and extract parts of it
+@import '~@angular/material/theming';
+@include mat-core();
+$dark-white: (
+  50: rgba(white, 0.1),
+  100: #7faedd,
+  200: #7f7fdd,
+  300: #7faedd,
+  400: #7faedd,
+  500: rgba(white, 0.68),
+  600: #7faedd,
+  700: #7faedd,
+  800: #7faedd,
+  900: #7faedd,
+  A100: #7faedd,
+  A200: #7faedd,
+  A400: #7faedd,
+  A700: white,
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: black,
+    500: black,
+    600: black,
+    700: black,
+    800: black,
+    900: black,
+    A100: black,
+    A200: black,
+    A400: black,
+    A700: black,
+  ),
+);
+$nav-primary: mat-palette($mat-blue, 700);
+$accent-text: rgba(black, 0.54);
+$primary-text: rgba(black, 0.87);
+$nav-accent: mat-palette($dark-white, 50);
+$nav-warn: mat-palette($mat-red);
+$nav-theme-light: mat-light-theme($nav-primary, $nav-accent, $nav-warn);
+$nav-theme-dark: mat-dark-theme($nav-primary, $nav-accent, $nav-warn);
