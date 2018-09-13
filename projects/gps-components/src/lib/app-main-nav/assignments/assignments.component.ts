@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, QueryList } from '@angular/core';
-// import { Highlightable, ActiveDescendantKeyManager } from "@angular/cdk/a11y";
 
 @Component({
   selector: 'gps-assignments',
@@ -7,6 +6,8 @@ import { Component, OnInit, Input, QueryList } from '@angular/core';
   styleUrls: ['./assignments.component.scss'],
 })
 export class Assignments implements OnInit {
+  @Input()
+  theme: string;
   constructor() {}
 
   public assignments = [

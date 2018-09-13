@@ -1,5 +1,10 @@
 @import '../../../lib-atom/partials/_sizes.scss';
+@import '../../../lib-atom/partials/_buttons.scss';
+// @import '~@angular/material/theming';
+@import './_app-main-nav-theme.scss';
 @import '~@angular/material/theming';
+
+// @include app-main-nav-theme($nav-theme);
 
 .gpcl--main-header-container {
   display: flex;
@@ -7,13 +12,13 @@
   justify-content: space-between;
   @include mat-elevation(3);
   height: 56px;
-  .icon {
-    height: rem(24);
-    width: rem(24);
-    .icon-path {
-      fill: #ffffff;
-    }
+  &.primary {
+    @include angular-material-theme($nav-theme-dark);
   }
+  &.secondary {
+    @include angular-material-theme($nav-theme-light);
+  }
+
   .left-of-header {
     margin-right: rem(64);
   }

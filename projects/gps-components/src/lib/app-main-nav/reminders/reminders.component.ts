@@ -48,7 +48,8 @@ export class RemindersComponent implements OnInit {
   width: string = '500px';
   @Input()
   reminders: Array<any>;
-
+  @Input()
+  theme: string;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}

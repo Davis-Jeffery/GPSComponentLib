@@ -1,8 +1,8 @@
 <div class="gpcl--site-frame">
-  <gps-app-main-nav [appsSidebar]="appsSidebar" [reminders]="employeeAccount.reminders" class="gps-dark-theme"></gps-app-main-nav>
+  <gps-app-main-nav [appsSidebar]="appsSidebar" [reminders]="employeeAccount.reminders"></gps-app-main-nav>
   <mat-sidenav-container class="gpcl--main-body-content">
     <mat-sidenav class="sidebar-nav-container" #appsSidebar mode="side" fixedTopGap="64">
-      <gps-apps-sidebar></gps-apps-sidebar>
+      <gps-apps-sidebar [globalProducts]="employeeAccount.globalProducts" [adminProducts]="employeeAccount.AdminProducts"></gps-apps-sidebar>
     </mat-sidenav>
     <mat-sidenav-content>
       apps Main body

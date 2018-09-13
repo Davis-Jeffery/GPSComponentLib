@@ -1,10 +1,6 @@
 @import '~@angular/material/theming';
 @import '../../../../lib-atom/partials/_sizes.scss';
-
-$primary: #1976d2;
-$primary-text: rgba(black, 0.87);
-$accent-text: rgba(black, 0.54);
-$primary-border-color: rgba(black, 0.12);
+@import '../../../../lib-atom/partials/_colors.scss';
 
 .gpcl--sidebar-header {
   display: flex;

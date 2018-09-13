@@ -1,0 +1,13 @@
+@import './_sizes.scss';
+@import './_colors.scss';
+
+.icon {
+  height: rem(24);
+  width: rem(24);
+  &.primary {
+    fill: white;
+  }
+  &.secondary {
+    fill: $primary-text;
+  }
+}
