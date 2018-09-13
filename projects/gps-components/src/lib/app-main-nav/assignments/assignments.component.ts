@@ -1,35 +1,66 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { NavOverlayComponent } from '../../nav-overlay/nav-overlay.component';
 
 @Component({
   selector: 'gps-assignments',
   templateUrl: './assignments.component.html',
   styleUrls: ['./assignments.component.scss'],
 })
-export class Assignments implements OnInit {
+export class AssignmentsComponent implements OnInit {
+  @Input()
+  open: boolean = false;
+  @Input()
+  maxWidth: string;
+  @Input()
+  maxHeight: string;
+  minWidth: string;
+  @Input()
+  minHeight: string;
+  @Input()
+  height: string = '400px';
+  @Input()
+  width: string = '500px';
+  @Input()
+  assignments: Array<any>;
   @Input()
   theme: string;
-  constructor() {}
-
-  // public assignments = [
-  //   {
-  //     isComplete: false,
-  //     action: 'Call',
-  //     account: 'Dwight K Schrute',
-  //     assignmentTitle: 'do something cool',
-  //     assignmentDetails:
-  //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  //     time: '3:45PM - 5:00PM',
-  //   },
-  //   {
-  //     isComplete: false,
-  //     action: 'call',
-  //     account: 'Michael Scott',
-  //     assignmentTitle: 'do something cooler than before',
-  //     assignmentDetails:
-  //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  //     time: '2:45AM - 3:00PM',
-  //   },
-  // ];
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
+
+  openDialog() {
+    if (!this.dialog.openDialogs.length) {
+      this.dialog.open(NavOverlayComponent, {
+        data: {
+          data: this.assignments,
+          title: 'Assignments',
+        },
+        maxWidth: this.maxWidth,
+        // maxHeight: this.maxHeight,
+        minWidth: this.minWidth,
+        // minHeight: this.minHeight,
+        // height: this.height,
+        width: this.width,
+        position: {
+          top: '68px',
+          right: '50px',
+        },
+        autoFocus: false,
+        hasBackdrop: false,
+      });
+    } else {
+      this.dialog.closeAll();
+    }
+  }
+}
+
+
+export class overlayActionButton {
+  constructor(
+    public title: string,
+    public link: string,
+    public icon: boolean,
+    public svg?: string,
+  ) {}
 }

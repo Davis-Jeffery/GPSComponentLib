@@ -52,8 +52,12 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   }
 
+  .mat-dialog-content {
+    max-height: 240px;
+  }
   .row {
     display: flex;
+    max-height: 120px;
     margin: 0 -24px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
@@ -80,15 +84,18 @@
       flex-direction: column;
 
       .title {
-        padding: 16px 16px 0;
+        padding: 1rem 1rem 0;
         white-space: nowrap;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         span:first-of-type {
-          font-size: 16px;
+          font-size: 1rem;
           color: rgba(0, 0, 0, 0.87);
+          max-width: 250px;
+          overflow: hidden;
+          text-overflow: ellipsis;
 
           a {
             cursor: pointer;
@@ -96,15 +103,18 @@
           }
         }
         span:last-of-type {
-          font-size: 14px;
+          font-size: 0.875rem;
           color: rgba(0, 0, 0, 0.54);
         }
       }
 
       .body {
-        padding: 16px;
-        font-size: 14px;
+        line-height: 0.875rem;
+        max-height: 3.5rem;
+        margin: 1rem;
+        font-size: 0.875rem;
         color: rgba(0, 0, 0, 0.54);
+        overflow: hidden;
       }
     }
   }
