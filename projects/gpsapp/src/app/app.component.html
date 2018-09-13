@@ -2,7 +2,9 @@
   <gps-app-main-nav [appsSidebar]="appsSidebar" [reminders]="employeeAccount.reminders"></gps-app-main-nav>
   <mat-sidenav-container class="gpcl--main-body-content">
     <mat-sidenav class="sidebar-nav-container" #appsSidebar mode="side" fixedTopGap="64">
-      <gps-apps-sidebar [globalProducts]="employeeAccount.globalProducts" [adminProducts]="employeeAccount.AdminProducts"></gps-apps-sidebar>
+      <gps-apps-sidebar [employeeName]="getFullname()" [employeeRole]="employeeAccount.accessLevel" [globalProducts]="employeeAccount.globalProducts"
+        [adminProducts]="employeeAccount.AdminProducts">
+      </gps-apps-sidebar>
     </mat-sidenav>
     <mat-sidenav-content>
       apps Main body

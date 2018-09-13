@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Inject,
-  Input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { NavOverlayComponent } from '../../nav-overlay/nav-overlay.component';
 

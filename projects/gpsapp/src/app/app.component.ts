@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Reminder } from './app-models/reminder.model';
-import { Employee } from './app-models/employee.model';
+import { Employee, makeFullName } from './app-models/employee.model';
 import {
   AccessLevel,
   returnAllAccessLevels,
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         'Checkout Out of Your Teller Drawer',
         undefined,
-        '9:00 AM - 5:00 PM'
+        '9:00 AM - 5:00 PM',
       ),
     );
     this.reminders.push(
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         'Call',
         'Dwight K Schrute',
-        '3:00 PM - 6:00 PM'
+        '3:00 PM - 6:00 PM',
       ),
     );
 
@@ -53,5 +53,9 @@ export class AppComponent implements OnInit {
       getAdminProductsByAccessLevel(this.adminAccess),
       this.reminders,
     );
+  }
+
+  getFullname() {
+    return this.employeeAccount.firstName + ' ' + this.employeeAccount.lastName;
   }
 }

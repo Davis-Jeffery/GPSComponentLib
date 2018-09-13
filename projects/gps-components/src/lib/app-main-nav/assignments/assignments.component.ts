@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, QueryList } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'gps-assignments',
