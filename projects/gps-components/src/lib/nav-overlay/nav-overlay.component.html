@@ -1,12 +1,8 @@
-
-
-  <div class="gpcl--icon-overlay">
-  <h1 mat-dialog-title>
-    {{ dialogTitle }} 
-  </h1>
+<div class="gpcl--icon-overlay">
+  <h1 mat-dialog-title>{{ dialogTitle }}</h1>
 
   <mat-dialog-content>
-  <div class="row" *ngFor="let item of overlayDataItems" [attr.aria-label]="item.assignmentTitle">
+    <div class="row" *ngFor="let item of overlayDataItems" [attr.aria-label]="item.assignmentTitle">
       <div class="icon-container" [ngClass]="{'active': item.isComplete}">
         <button mat-icon-button (click)="item.isComplete =! item.isComplete">
           <svg viewBox="0 0 24 24">

@@ -17,23 +17,8 @@ export class Employee {
     public reminders: Array<Reminder>,
     public assignments?: Array<Assignment>,
   ) {}
-
-  // public createAccessLevel (accessLevel: AccessLevel) {
-
-  // }
 }
 
 export function makeFullName(): string {
   return this.firstName + ' ' + this.lastName;
-}
-
-export function getAccessLevel(level: AccessLevel): boolean {
-  switch (level) {
-    case AccessLevel.ADMIN:
-      return true;
-    case AccessLevel.COLLECTIONS_AGENT:
-      return false;
-    case AccessLevel.TELLER_AGENT:
-      return false;
-  }
 }

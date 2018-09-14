@@ -1,17 +1,10 @@
-import {
-  Component,
-  OnInit,
-  Inject,
-  Input,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'gps-nav-overlay',
   templateUrl: './nav-overlay.component.html',
   styleUrls: ['./nav-overlay.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class NavOverlayComponent implements OnInit {
   public dialogTitle: string;

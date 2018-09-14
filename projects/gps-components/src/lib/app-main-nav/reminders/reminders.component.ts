@@ -2,25 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { NavOverlayComponent } from '../../nav-overlay/nav-overlay.component';
 
-export class Reminder {
-  constructor(
-    public id: string,
-    public isComplete: boolean,
-    public title: string,
-    public reminderDesctription: string,
-    public customerAccount: CustomerAccount,
-    public action?: string,
-  ) {}
-}
-
-export class CustomerAccount {
-  constructor(
-    public customerId: string,
-    public firstName: string,
-    public lastName: string,
-  ) {}
-}
-
 @Component({
   selector: 'gps-reminders',
   templateUrl: './reminders.component.html',

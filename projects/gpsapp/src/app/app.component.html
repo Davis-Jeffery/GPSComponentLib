@@ -1,13 +1,13 @@
 <div class="gpcl--site-frame">
   <gps-app-main-nav [appsSidebar]="appsSidebar" [reminders]="employeeAccount.reminders"></gps-app-main-nav>
   <mat-sidenav-container class="gpcl--main-body-content">
-    <mat-sidenav class="sidebar-nav-container" #appsSidebar mode="side" fixedTopGap="64">
+    <mat-sidenav role="navigation" class="sidebar-nav-container" #appsSidebar mode="side" fixedTopGap="64">
       <gps-apps-sidebar [employeeName]="getFullname()" [employeeRole]="employeeAccount.accessLevel" [globalProducts]="employeeAccount.globalProducts"
         [adminProducts]="employeeAccount.AdminProducts">
       </gps-apps-sidebar>
     </mat-sidenav>
-    <mat-sidenav-content>
-      apps Main body
+    <mat-sidenav-content role="main">
+      <button mat-button color="primary">some button</button>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
