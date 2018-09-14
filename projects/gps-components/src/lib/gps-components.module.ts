@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LibMaterialModule } from './lib-material.module';
 import { AppMainNav } from './app-main-nav/app-main-nav.component';
 import { RemindersComponent } from './app-main-nav/reminders/reminders.component';
-import { Assignments } from './app-main-nav/assignments/assignments.component';
+import { AssignmentsComponent } from './app-main-nav/assignments/assignments.component';
 import { ShellSearch } from './app-main-nav/shell-search/shell-search.component';
 import { A11yModule } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
@@ -28,7 +28,7 @@ import { DialogModule } from './dialog/dialog.module';
     AppMainNav,
     RemindersComponent,
     ShellSearch,
-    Assignments,
+    AssignmentsComponent,
     TableComponent,
     NavOverlayComponent,
     AppsSidebarComponent,

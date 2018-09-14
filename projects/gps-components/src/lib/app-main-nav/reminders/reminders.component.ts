@@ -30,6 +30,8 @@ export class RemindersComponent implements OnInit {
   ngOnInit() {}
 
   openDialog() {
+    console.log(this.dialog.openDialogs)
+    
     if (!this.dialog.openDialogs.length) {
       this.dialog.open(NavOverlayComponent, {
         data: {
@@ -53,13 +55,4 @@ export class RemindersComponent implements OnInit {
       this.dialog.closeAll();
     }
   }
-}
-
-export class overlayActionButton {
-  constructor(
-    public title: string,
-    public link: string,
-    public icon: boolean,
-    public svg?: string,
-  ) {}
 }
