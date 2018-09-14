@@ -11,10 +11,8 @@ import { customerAccount } from './app-models/customer-account.model';
 import { loanAccount } from './app-models/loan-account.model';
 import { address } from './app-models/address.model';
 import { accountStatus } from './app-models/account-status.model';
-import { GpsModalService } from 'gps-components/lib/modal/gps-modal.service';
 import { DialogService } from '../../../gps-components/src/lib/dialog/dialog.service';
 import { ExampleComponent } from './example/example.component';
-// import { ExampleComponent } from './example/example.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -36,15 +34,7 @@ export class AppComponent implements OnInit {
   public writtenOffAccountStatus: accountStatus = accountStatus.WRITTEN_OFF;
   public chargedOffAccountStatus: accountStatus = accountStatus.CHARGED_OFF;
 
-  constructor(public dialog: DialogService) {
-    const ref = this.dialog.open(ExampleComponent, {
-      data: { message: 'I am a dynamic component inside of a dialog!' },
-    });
-
-    ref.afterClosed.subscribe(result => {
-      console.log('Dialog closed', result);
-    });
-  }
+  constructor(public dialog: DialogService) {}
 
   ngOnInit() {
     this.loanAccounts.push(
@@ -116,6 +106,15 @@ export class AppComponent implements OnInit {
       getAdminProductsByAccessLevel(this.adminAccess),
       this.reminders,
     );
+  }
+
+  openDialog() {
+    const ref = this.dialog.open(ExampleComponent, {
+      data: { message: 'I am a dynamic component inside of a dialog!' },
+    });
+    ref.afterClosed.subscribe(result => {
+      console.log('Dialog closed', result);
+    });
   }
 
   getFullname() {

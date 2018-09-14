@@ -1,6 +1,4 @@
 import { Observable, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
-
 export class DialogRef {
   constructor() {}
 

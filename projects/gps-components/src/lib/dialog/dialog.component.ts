@@ -45,7 +45,7 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
   }
 
   onDialogClicked(evt: MouseEvent) {
-    // evt.stopPropagation();
+    evt.stopPropagation();
   }
 
   loadChildComponent(componentType: Type<any>) {
@@ -66,7 +66,6 @@ export class DialogComponent implements AfterViewInit, OnDestroy {
   }
 
   close() {
-    console.log('hit');
     this._onClose.next();
   }
 }
