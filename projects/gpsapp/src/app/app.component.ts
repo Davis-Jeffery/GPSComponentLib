@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Reminder } from './app-models/reminder.model';
+import { Assignment } from './app-models/assignment.model';
+
 import { Employee, makeFullName } from './app-models/employee.model';
 import {
   AccessLevel,
@@ -19,6 +21,7 @@ export class AppComponent implements OnInit {
   public tellerAccess: AccessLevel = AccessLevel.TELLER_AGENT;
   public collectionsAccess: AccessLevel = AccessLevel.COLLECTIONS_AGENT;
   public reminders: Array<Reminder> = [];
+  public assignments: Array<Assignment> = [];
   constructor() {}
 
   ngOnInit() {
@@ -43,6 +46,32 @@ export class AppComponent implements OnInit {
       ),
     );
 
+    this.reminders.push(
+      new Reminder(
+        '312324',
+        false,
+        `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        'This is a super mega long title for testing purposes',
+        'Dwight K Schrute',
+        '3:00 PM - 6:00 PM',
+      ),
+    );
+
+    this.assignments.push(
+      new Assignment(
+        '312324',
+        false,
+        `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+        'This is a super mega long title for testing purposes',
+        'Dwight K Schrute',
+        '3:00 PM - 6:00 PM',
+      ),
+    );
+        //console.log(this.assignments);
     this.employeeAccount = new Employee(
       '234234244',
       'Jeff',
@@ -52,6 +81,7 @@ export class AppComponent implements OnInit {
       getGlobalProductsByAccessLevel(this.adminAccess),
       getAdminProductsByAccessLevel(this.adminAccess),
       this.reminders,
+      this.assignments,
     );
   }
 
