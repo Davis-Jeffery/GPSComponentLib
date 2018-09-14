@@ -16,11 +16,13 @@ export class AppMainNav implements OnInit {
   @Input()
   reminders: Array<any>;
   @Input()
+  assignments: Array<any>;
+  @Input()
   appsSidebar: MatDrawer;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() { console.log(this.assignments)}
 
   toggleAppsSidebar() {
     this.appsSidebar.toggle();

@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
         '3:00 PM - 6:00 PM',
       ),
     );
-
+        //console.log(this.assignments);
     this.employeeAccount = new Employee(
       '234234244',
       'Jeff',

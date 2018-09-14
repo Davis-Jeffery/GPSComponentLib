@@ -54,13 +54,3 @@ export class AssignmentsComponent implements OnInit {
     }
   }
 }
-
-
-export class overlayActionButton {
-  constructor(
-    public title: string,
-    public link: string,
-    public icon: boolean,
-    public svg?: string,
-  ) {}
-}
