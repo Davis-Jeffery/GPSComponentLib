@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
   public addresses: Array<address> = [];
   public loanAccounts: Array<loanAccount> = [];
   public goodAccountStatus: accountStatus = accountStatus.GOOD;
+  s;
   public bankruptAccountStatus: accountStatus = accountStatus.BANKRUPT;
   public delinquentAccountStatus: accountStatus = accountStatus.DELINQUENT;
   public writtenOffAccountStatus: accountStatus = accountStatus.WRITTEN_OFF;
@@ -69,44 +70,11 @@ export class AppComponent implements OnInit {
       new Reminder(
         '21323312',
         false,
+        'Do Something',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        'Checkout Out of Your Teller Drawer',
-        undefined,
-        '9:00 AM - 5:00 PM',
-      ),
-    );
-    this.reminders.push(
-      new Reminder(
-        '213233dfs12',
-        false,
-        'Lorem idsfdsfsdfsfpsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        'Checkout',
         this.account,
         undefined,
         '9:00 AM - 5:00 PM',
-      ),
-    );
-    this.reminders.push(
-      new Reminder(
-        '312324',
-        false,
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        'Call',
-        this.account,
-        'Dwight K Schrute',
-        '3:00 PM - 6:00 PM',
-      ),
-    );
-
-    this.reminders.push(
-      new Reminder(
-        '312324',
-        false,
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-        'This is a super mega long title for testing purposes',
-        'Dwight K Schrute',
-        '3:00 PM - 6:00 PM',
       ),
     );
 
@@ -114,10 +82,10 @@ export class AppComponent implements OnInit {
       new Assignment(
         '312324',
         false,
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-        'This is a super mega long title for testing purposes',
-        'Dwight K Schrute',
+        'Do Something else',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        this.account,
+        undefined,
         '3:00 PM - 6:00 PM',
       ),
     );
