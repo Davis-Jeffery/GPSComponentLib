@@ -1,44 +1,47 @@
-
-
-  <div class="gpcl--icon-overlay">
+<div class="gpcl--icon-overlay">
   <h1 mat-dialog-title>
-    {{ dialogTitle }} 
+    {{ dialogTitle }}
   </h1>
 
   <mat-dialog-content>
-  <div class="row" *ngFor="let item of overlayDataItems; let i = index" [attr.aria-label]="dialogTitle">
+    <div class="row" *ngFor="let item of overlayDataItems; let i = index" [attr.aria-label]="dialogTitle">
 
-        <div class="icon-container" [ngClass]="{'active': item.isComplete}">
-          <button mat-icon-button (click)="item.isComplete =! item.isComplete">
-            <svg viewBox="0 0 24 24">
-              <path d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2,4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z"
-              />
-            </svg>
-          </button>
+      <div class="icon-container" [ngClass]="{'active': item.isComplete}">
+        <button mat-icon-button (click)="item.isComplete =! item.isComplete">
+          <svg viewBox="0 0 24 24">
+            <path d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2,4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="content-container">
+        <div class="title">
+          <div class="left">
+            <span>{{item.action}}</span>
+          </div>
+          <div class="right">
+            <span>{{item.time}}</span>
+          </div>
         </div>
+        <div class="subtitle">
+          <div class="left">
+            <a>{{item.link}}</a>
+          </div>
+          <div class="right">
+          </div>
+        </div>
+        <div class="body">
+          <p>
+            {{ (descriptions[i].descriptionText.length > 100 && !descriptions[i].isSeeMore) ?
+            (descriptions[i].descriptionText | slice: 0 : 100 ) + '...' : (descriptions[i].descriptionText) }}
+            <a *ngIf="descriptions[i].descriptionText.length > 100" (click)="descriptions[i].isSeeMore =! descriptions[i].isSeeMore">
+              Show <span *ngIf="descriptions[i].isSeeMore">Less</span><span *ngIf="!descriptions[i].isSeeMore">More</span>
+            </a>
+          </p>
 
-        <div class="content-container">
-          <div class="title">
-            <div class="left">
-              <span>{{item.action}}</span>
-            </div>
-            <div class="right">
-                <span>{{item.time}}</span>
-            </div>
-          </div>
-          <div class="subtitle">
-              <div class="left">
-                <a>{{item.link}}</a>
-              </div>  
-              <div class="right">
-              </div>
-            </div>
-          <div class="body">
-            <p #description>{{ (descriptions[i].descriptionText.length > 100 && !descriptions[i].isSeeMore) ? (descriptions[i].descriptionText | slice: 0 : 100 ) + '...' : (descriptions[i].descriptionText) }} </p>
-            <a (click)="descriptions[i].isSeeMore =! descriptions[i].isSeeMore">See Details</a>
-          </div>
         </div>
       </div>
+    </div>
 
   </mat-dialog-content>
 
