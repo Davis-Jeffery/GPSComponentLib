@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   Component,
   OnInit,
@@ -6,16 +7,26 @@ import {
   ViewEncapsulation
 } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
+=======
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+>>>>>>> origin
 
 export class Description {
   constructor(public descriptionText: string, public isSeeMore: boolean) {}
 }
 
 @Component({
+<<<<<<< HEAD
   selector: "gps-nav-overlay",
   templateUrl: "./nav-overlay.component.html",
   styleUrls: ["./nav-overlay.component.scss"],
   encapsulation: ViewEncapsulation.None
+=======
+  selector: 'gps-nav-overlay',
+  templateUrl: './nav-overlay.component.html',
+  styleUrls: ['./nav-overlay.component.scss'],
+>>>>>>> origin
 })
 export class NavOverlayComponent implements OnInit {
   public dialogTitle: string;

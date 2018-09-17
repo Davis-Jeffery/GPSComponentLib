@@ -39,10 +39,10 @@ export class RemindersComponent implements OnInit {
           title: 'Reminders',
         },
         maxWidth: this.maxWidth,
-        // maxHeight: this.maxHeight,
+        maxHeight: this.maxHeight,
         minWidth: this.minWidth,
-        // minHeight: this.minHeight,
-        // height: this.height,
+        minHeight: this.minHeight,
+        height: this.height,
         width: this.width,
         position: {
           top: '68px',
