@@ -1,15 +1,5 @@
-// @keyframes slideDown {
-//   0% {
-//   }
-//   100% {
-//     transform: translateY(56px);
-//   }
-// }
+@import "../../../lib-atom/partials/_sizes.scss";
 
-// .cdk-overlay-pane {
-//   transform: translateY(-20%);
-//   animation: slideDown 0.3s forwards 0s ease-in;
-// }
-// .cdk-overlay-container > * {
-//   transition: none;
-// }
+.scroll-container {
+  max-height: rem(210);
+}

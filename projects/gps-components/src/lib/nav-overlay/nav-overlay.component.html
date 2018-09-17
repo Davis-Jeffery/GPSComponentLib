@@ -1,13 +1,11 @@
 <div class="gpcl--icon-overlay">
-<<<<<<< HEAD
-  <h1 mat-dialog-title>
-    {{ dialogTitle }}
-  </h1>
-=======
-  <h1 mat-dialog-title>{{ dialogTitle }}</h1>
->>>>>>> origin
+  <div mat-dialog-title class="header">
+    <span>{{ dialogTitle }}</span>
+    <a *ngIf="dialogTitle === 'Reminders'">CREATE REMINDER</a>
+    <a *ngIf="dialogTitle === 'Assignments'">CREATE ASSIGNMENT</a>
+  </div>
 
-  <mat-dialog-content>
+  <mat-dialog-content class="scroll-container">
     <div class="row" *ngFor="let item of overlayDataItems; let i = index" [attr.aria-label]="dialogTitle">
 
       <div class="icon-container" [ngClass]="{'active': item.isComplete}">
@@ -21,11 +19,7 @@
       <div class="content-container">
         <div class="title">
           <div class="left">
-<<<<<<< HEAD
-            <span>{{item.action}}</span>
-=======
             <span>{{item.title}}</span>
->>>>>>> origin
           </div>
           <div class="right">
             <span>{{item.time}}</span>
@@ -39,7 +33,6 @@
           </div>
         </div>
         <div class="body">
-<<<<<<< HEAD
           <p>
             {{ (descriptions[i].descriptionText.length > 100 && !descriptions[i].isSeeMore) ?
             (descriptions[i].descriptionText | slice: 0 : 100 ) + '...' : (descriptions[i].descriptionText) }}
@@ -48,11 +41,6 @@
             </a>
           </p>
 
-=======
-          <p #description>{{ (descriptions[i].descriptionText.length > 100 && !descriptions[i].isSeeMore) ?
-            (descriptions[i].descriptionText | slice: 0 : 100 ) + '...' : (descriptions[i].descriptionText) }} </p>
-          <a (click)="descriptions[i].isSeeMore =! descriptions[i].isSeeMore">See Details</a>
->>>>>>> origin
         </div>
       </div>
     </div>

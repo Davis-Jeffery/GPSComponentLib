@@ -1,10 +1,7 @@
 @import "../../../lib-atom/partials/_sizes.scss";
 @import "../../../lib-atom/partials/_buttons.scss";
-// @import '~@angular/material/theming';
 @import "./_app-main-nav-theme.scss";
 @import "~@angular/material/theming";
-
-// @include app-main-nav-theme($nav-theme);
 
 .gpcl--main-header-container {
   display: flex;
@@ -44,9 +41,13 @@
 }
 
 .gpcl--icon-overlay {
-  h1 {
-    margin: -24px -24px 0;
-    padding: 8px 16px;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: rem(-24) rem(-24) 0;
+    padding: rem(8) rem(16);
     color: rgba(0, 0, 0, 0.87);
     background: rgba(0, 0, 0, 0.04);
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -54,24 +55,24 @@
 
   a {
     cursor: pointer;
-    font-size: 0.875rem;
+    font-size: rem(12);
     color: #1976d2;
   }
 
   .row {
     display: flex;
-    margin: 0 -24px;
-    padding: 1rem;
+    margin: 0 rem(-24);
+    padding: rem(16);
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
     .icon-container {
       display: inline-flex;
       align-items: center;
-      padding: 16px 16px 16px 0;
+      padding: rem(16) rem(16) rem(16) 0;
 
       svg {
-        width: 30px;
-        height: 30px;
+        width: rem(30);
+        height: rem(30);
         fill: rgba(0, 0, 0, 0.12);
       }
 
@@ -89,19 +90,19 @@
 
       .title,
       .subtitle {
-        padding-bottom: 0.5rem;
+        padding-bottom: rem(8);
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         .left {
-          font-size: 1rem;
+          font-size: rem(16);
           display: flex;
           color: rgba(0, 0, 0, 0.87);
 
           span {
             display: block;
-            max-width: 250px;
+            max-width: rem(250);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -109,13 +110,13 @@
         }
 
         .right {
-          font-size: 0.875rem;
+          font-size: rem(14);
           color: rgba(0, 0, 0, 0.54);
         }
       }
 
       .body {
-        font-size: 0.875rem;
+        font-size: rem(14);
         color: rgba(0, 0, 0, 0.54);
         overflow: hidden;
       }

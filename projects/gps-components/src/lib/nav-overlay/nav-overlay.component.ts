@@ -1,32 +1,14 @@
-<<<<<<< HEAD
-import {
-  Component,
-  OnInit,
-  Inject,
-  Input,
-  ViewEncapsulation
-} from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
-=======
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
->>>>>>> origin
 
 export class Description {
   constructor(public descriptionText: string, public isSeeMore: boolean) {}
 }
 
 @Component({
-<<<<<<< HEAD
   selector: "gps-nav-overlay",
   templateUrl: "./nav-overlay.component.html",
-  styleUrls: ["./nav-overlay.component.scss"],
-  encapsulation: ViewEncapsulation.None
-=======
-  selector: 'gps-nav-overlay',
-  templateUrl: './nav-overlay.component.html',
-  styleUrls: ['./nav-overlay.component.scss'],
->>>>>>> origin
+  styleUrls: ["./nav-overlay.component.scss"]
 })
 export class NavOverlayComponent implements OnInit {
   public dialogTitle: string;
@@ -47,7 +29,6 @@ export class NavOverlayComponent implements OnInit {
       //console.log(x.description);
       this.descriptions.push(new Description(x.description, false));
     });
-    console.log(this.descriptions);
   }
 
   onNoClick(): void {
