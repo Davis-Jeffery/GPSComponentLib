@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { NavOverlayComponent } from '../../nav-overlay/nav-overlay.component';
+import { Component, OnInit, Input } from "@angular/core";
+import { MatDialog } from "@angular/material";
+import { NavOverlayComponent } from "../../nav-overlay/nav-overlay.component";
 
 @Component({
-  selector: 'gps-assignments',
-  templateUrl: './assignments.component.html',
-  styleUrls: ['./assignments.component.scss'],
+  selector: "gps-assignments",
+  templateUrl: "./assignments.component.html",
+  styleUrls: ["./assignments.component.scss"]
 })
 export class AssignmentsComponent implements OnInit {
   @Input()
@@ -18,9 +18,9 @@ export class AssignmentsComponent implements OnInit {
   @Input()
   minHeight: string;
   @Input()
-  height: string = '400px';
+  height: string = "400px";
   @Input()
-  width: string = '500px';
+  width: string = "500px";
   @Input()
   assignments: Array<any>;
   @Input()
@@ -30,27 +30,26 @@ export class AssignmentsComponent implements OnInit {
   ngOnInit() {}
 
   openDialog() {
-    if (!this.dialog.openDialogs.length) {
-      this.dialog.open(NavOverlayComponent, {
-        data: {
-          data: this.assignments,
-          title: 'Assignments',
-        },
-        maxWidth: this.maxWidth,
-        // maxHeight: this.maxHeight,
-        minWidth: this.minWidth,
-        // minHeight: this.minHeight,
-        // height: this.height,
-        width: this.width,
-        position: {
-          top: '68px',
-          right: '50px',
-        },
-        autoFocus: false,
-        hasBackdrop: false,
-      });
-    } else {
-      this.dialog.closeAll();
-    }
+    this.dialog.closeAll();
+
+    this.dialog.open(NavOverlayComponent, {
+      data: {
+        data: this.assignments,
+        title: "Assignments"
+      },
+      maxWidth: this.maxWidth,
+      // maxHeight: this.maxHeight,
+      minWidth: this.minWidth,
+      // minHeight: this.minHeight,
+      // height: this.height,
+      width: this.width,
+      position: {
+        top: "68px",
+        right: "16px"
+      },
+      id: "assignments-dialog",
+      autoFocus: false,
+      hasBackdrop: false
+    });
   }
 }
