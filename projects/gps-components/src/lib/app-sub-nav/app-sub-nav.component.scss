@@ -1,0 +1,40 @@
+@import "../../../lib-atom/partials/_sizes.scss";
+@import "../../../lib-atom/partials/_buttons.scss";
+
+@import "~@angular/material/theming";
+
+.gpcl--sub-header-container {
+  @include mat-elevation(3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+
+  .left-of-header {
+    font-size: rem(18);
+    display: flex;
+    align-items: center;
+    color: #1976d2;
+
+    svg {
+      fill: #1976d2;
+    }
+  }
+
+  .gpcl--icon-spacing {
+    margin-right: rem(12);
+  }
+
+  .end-icons {
+    margin-left: rem(64);
+  }
+
+  .sidebar-button {
+    margin-right: 32px;
+  }
+
+  .institution-name {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
