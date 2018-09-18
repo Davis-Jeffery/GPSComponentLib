@@ -9,7 +9,7 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./shell-search.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ShellSearch implements OnInit {
+export class ShellSearchComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ['one', 'two', 'three'];
   filteredOptions: Observable<string[]>;

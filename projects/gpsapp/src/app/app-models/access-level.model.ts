@@ -1,5 +1,5 @@
 import {
-  product,
+  Product,
   home,
   tellerDrawer,
   collections,
@@ -27,7 +27,7 @@ export function returnAllAccessLevels(): Array<AccessLevel> {
 
 export function getGlobalProductsByAccessLevel(
   accessLevel: AccessLevel,
-): Array<product> {
+): Array<Product> {
   switch (accessLevel) {
     case AccessLevel.ADMIN:
       return [home, tellerDrawer, collections];
@@ -40,7 +40,7 @@ export function getGlobalProductsByAccessLevel(
 
 export function getAdminProductsByAccessLevel(
   accessLevel: AccessLevel,
-): Array<product> {
+): Array<Product> {
   switch (accessLevel) {
     case AccessLevel.ADMIN:
       return [

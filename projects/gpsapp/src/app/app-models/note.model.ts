@@ -1,6 +1,6 @@
-export class note {
+export class Note {
   constructor(
-    public contactType: contactType,
+    public noteContactType: contactType,
     public note: string,
     public dateTime: string,
   ) {}

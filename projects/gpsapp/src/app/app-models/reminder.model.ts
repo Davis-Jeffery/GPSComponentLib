@@ -1,4 +1,4 @@
-import { customerAccount } from './customer-account.model';
+import { CustomerAccount } from './customer-account.model';
 
 export class Reminder {
   constructor(
@@ -6,7 +6,7 @@ export class Reminder {
     public isComplete: boolean,
     public title: string,
     public description: string,
-    public attatchedAccount: customerAccount,
+    public attatchedAccount: CustomerAccount,
     public link?: string,
     public time?: string,
   ) {}

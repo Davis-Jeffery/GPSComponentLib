@@ -1,4 +1,4 @@
-import { customerAccount } from './customer-account.model';
+import { CustomerAccount } from './customer-account.model';
 
 export class Assignment {
   constructor(
@@ -6,7 +6,7 @@ export class Assignment {
     public isComplete: boolean,
     public title: string,
     public description: string,
-    public attatchedAccount: customerAccount,
+    public attatchedAccount: CustomerAccount,
     public link?: string,
     public time?: string,
   ) {}

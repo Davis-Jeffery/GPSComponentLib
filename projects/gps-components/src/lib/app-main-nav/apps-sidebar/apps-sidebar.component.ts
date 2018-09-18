@@ -1,20 +1,12 @@
 import {
   Component,
   Input,
-  ViewChild,
   Output,
   EventEmitter,
-  OnInit,
-  AfterContentChecked,
   AfterViewInit,
 } from '@angular/core';
-export class product {
-  constructor(
-    public id: string,
-    public title: string,
-    public link: string,
-    public icon: string,
-  ) {}
+export class Product {
+  constructor(public id: string, public title: string, public icon: string) {}
 }
 @Component({
   selector: 'gps-apps-sidebar',
@@ -27,9 +19,9 @@ export class AppsSidebarComponent implements AfterViewInit {
   @Output()
   selectApp: EventEmitter<string> = new EventEmitter();
   @Input()
-  globalProducts: Array<product>;
+  globalProducts: Array<Product>;
   @Input()
-  adminProducts: Array<product>;
+  adminProducts: Array<Product>;
   constructor() {}
   @Input()
   employeeName: string;

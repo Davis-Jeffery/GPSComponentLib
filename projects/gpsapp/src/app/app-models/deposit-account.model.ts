@@ -1,4 +1,4 @@
-export class depositAccount {
+export class DepositAccount {
   constructor(
     public id: string,
     public accountType: depositAccountType,

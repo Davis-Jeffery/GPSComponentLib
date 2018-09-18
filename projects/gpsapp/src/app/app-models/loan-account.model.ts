@@ -1,6 +1,6 @@
 import { accountStatus } from './account-status.model';
 
-export class loanAccount {
+export class LoanAccount {
   constructor(
     public id: string,
     public loanName: string,
@@ -8,6 +8,6 @@ export class loanAccount {
     public balance: number,
     public rateApr: string,
     public PaymentDueDate: string,
-    public accountStatus: accountStatus,
+    public laonAccountStatus: accountStatus,
   ) {}
 }

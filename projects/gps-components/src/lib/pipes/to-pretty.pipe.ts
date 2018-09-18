@@ -11,7 +11,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({ name: 'toPretty' })
 export class ToPrettyPipe implements PipeTransform {
   transform(value: string): string {
-    let frags = value.split('_');
+    const frags = value.split('_');
     for (let i = 0; i < frags.length; i++) {
       frags[i] = frags[i].toLowerCase();
       frags[i] = frags[i].charAt(0).toUpperCase() + frags[i].slice(1);
