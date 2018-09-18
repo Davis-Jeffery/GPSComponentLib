@@ -23,7 +23,7 @@ export class GpclNavSectionLabelDirective {}
 export class GpclNavListDirective {}
 
 @Directive({
-  selector: 'span[gpcl-nav-item-icon]',
+  selector: 'gpcl-nav-item-icon',
   host: { class: 'link-icon' },
 })
 export class GpclNavItemIconDirective {}
@@ -34,23 +34,13 @@ export class GpclNavItemIconDirective {}
 })
 export class GpclNavItemTextDirective {}
 
-// @Directive({
-//   selector: 'a[mat-list-item][gpcl-nav-item]',
-//   host: { class: 'gpcl--nav-item' },
-// })
-// export class GpclNavItem {}
-
-// @Directive({
-//   selector: 'gpcl-nav-item-icon',
-//   host: { class: 'link-icon' },
-// })
-// export class GpclNavItemIconDirective {}
-
-// @Directive({
-//   selector: 'span[gpcl-nav-item-text]',
-//   host: { class: 'link-text' },
-// })
-// export class GpclNavItemTextDirective {}
+@Component({
+  selector: 'gpcl-nav-item',
+  templateUrl: './nav-item.component.html',
+  styleUrls: ['./nav-item.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+})
+export class GpclNavItemComponent {}
 
 @Component({
   selector: 'gps-apps-sidebar',

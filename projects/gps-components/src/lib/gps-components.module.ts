@@ -17,6 +17,7 @@ import {
   GpclNavListDirective,
   GpclNavItemIconDirective,
   GpclNavItemTextDirective,
+  GpclNavItemComponent,
 } from './app-main-nav/apps-sidebar/apps-sidebar.component';
 import { ToPrettyPipe } from './pipes/to-pretty.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -43,6 +44,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GpclNavListDirective,
     GpclNavItemIconDirective,
     GpclNavItemTextDirective,
+    GpclNavItemComponent,
     ToPrettyPipe,
   ],
   entryComponents: [NavOverlayComponent],
@@ -55,6 +57,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GpclNavListDirective,
     GpclNavItemIconDirective,
     GpclNavItemTextDirective,
+    GpclNavItemComponent,
     ToPrettyPipe,
   ],
 })
