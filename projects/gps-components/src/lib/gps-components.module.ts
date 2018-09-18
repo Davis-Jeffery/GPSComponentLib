@@ -11,7 +11,13 @@ import { ShellSearchComponent } from './app-main-nav/shell-search/shell-search.c
 import { A11yModule } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
 import { NavOverlayComponent } from './nav-overlay/nav-overlay.component';
-import { AppsSidebarComponent } from './app-main-nav/apps-sidebar/apps-sidebar.component';
+import {
+  AppsSidebarComponent,
+  GpclNavSectionLabelDirective,
+  GpclNavListDirective,
+  GpclNavItemIconDirective,
+  GpclNavItemTextDirective,
+} from './app-main-nav/apps-sidebar/apps-sidebar.component';
 import { ToPrettyPipe } from './pipes/to-pretty.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
@@ -33,6 +39,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TableComponent,
     NavOverlayComponent,
     AppsSidebarComponent,
+    GpclNavSectionLabelDirective,
+    GpclNavListDirective,
+    GpclNavItemIconDirective,
+    GpclNavItemTextDirective,
     ToPrettyPipe,
   ],
   entryComponents: [NavOverlayComponent],
@@ -41,6 +51,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppMainNavComponent,
     TableComponent,
     AppsSidebarComponent,
+    GpclNavSectionLabelDirective,
+    GpclNavListDirective,
+    GpclNavItemIconDirective,
+    GpclNavItemTextDirective,
     ToPrettyPipe,
   ],
 })
