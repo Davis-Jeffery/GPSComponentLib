@@ -1,17 +1,17 @@
-import { address } from './address.model';
-import { note } from './note.model';
-import { loanAccount } from './loan-account.model';
-import { depositAccount } from './deposit-account.model';
+import { Address } from './address.model';
+import { Note } from './note.model';
+import { LoanAccount } from './loan-account.model';
+import { DepositAccount } from './deposit-account.model';
 
-export class customerAccount {
+export class CustomerAccount {
   constructor(
     public firstName: string,
     public lastName: string,
     public socialSecurityNumber: string,
-    public addresses: Array<address>,
+    public addresses: Array<Address>,
     public middleName?: string,
-    public notes?: Array<note>,
-    public loanAccounts?: Array<loanAccount>,
-    public depositAccounts?: Array<depositAccount>,
+    public notes?: Array<Note>,
+    public loanAccounts?: Array<LoanAccount>,
+    public depositAccounts?: Array<DepositAccount>,
   ) {}
 }

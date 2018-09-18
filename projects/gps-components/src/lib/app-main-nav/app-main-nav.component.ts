@@ -8,11 +8,11 @@ import { MatDrawer } from '@angular/material';
   styleUrls: ['./app-main-nav.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AppMainNav implements OnInit {
+export class AppMainNavComponent implements OnInit {
   @Input()
-  background: string = 'primary';
+  background = 'primary';
   @Input()
-  institutionName: string = 'Institution Name';
+  institutionName = 'Institution Name';
   @Input()
   reminders: Array<any>;
   @Input()
@@ -22,7 +22,9 @@ export class AppMainNav implements OnInit {
 
   constructor() {}
 
-  ngOnInit() { console.log(this.assignments)}
+  ngOnInit() {
+    console.log(this.assignments);
+  }
 
   toggleAppsSidebar() {
     this.appsSidebar.toggle();
