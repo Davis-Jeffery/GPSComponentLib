@@ -64,6 +64,15 @@
           fill: $accent-text;
         }
       }
+      &.active {
+        .link-icon,
+        .link-text {
+          color: $primary;
+          svg {
+            fill: $primary;
+          }
+        }
+      }
     }
   }
   .gpcl--nav-label {

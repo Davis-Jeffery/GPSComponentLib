@@ -15,36 +15,33 @@
   </div>
   <div class="user-info">
     <span class="name">{{employeeName}}</span>
-    <span class="role">{{toPretty(employeeRole)}}</span>
+    <span class="role">{{employeeRole | toPretty}}</span>
   </div>
 </section>
 <section class="gpcl--links-section">
   <mat-nav-list class="gpcl--user-apps-list non-admin">
-    <a mat-list-item class="app-link" *ngFor="let globalProduct of globalProducts">
+    <a mat-list-item [ngClass]="{'active' : this.currentApp === globalProductTitle.innerHTML}" (click)="clickedProduct(globalProductTitle)"
+      class="app-link" *ngFor="let globalProduct of globalProducts">
       <span class="link-icon">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path [attr.d]="globalProduct.icon" />
         </svg>
       </span>
-      <span class="link-text">{{globalProduct.title}}</span>
+      <span class="link-text" #globalProductTitle>{{globalProduct.title}}</span>
     </a>
   </mat-nav-list>
 </section>
 <section class="gpcl--links-section" *ngIf="adminProducts">
   <label class="gpcl--nav-label">Admin</label>
   <mat-nav-list class="gpcl--user-apps-list admin">
-    <a mat-list-item class="app-link" *ngFor="let adminProduct of adminProducts">
+    <a mat-list-item class="app-link" [ngClass]="{'active' : this.currentApp === adminProductTitle.innerHTML}" (click)="clickedProduct(adminProductTitle)"
+      *ngFor=" let adminProduct of adminProducts">
       <span class="link-icon">
         <svg gpcl-list-item-icon viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path [attr.d]="adminProduct.icon" />
         </svg>
       </span>
-      <span class="link-text">{{adminProduct.title}}</span>
+      <span class="link-text" #adminProductTitle>{{adminProduct.title}}</span>
     </a>
   </mat-nav-list>
 </section>
-
-
-<!-- <section class="gpcl--admin-apps-list">
-  <a mat-button class="user-links normal-user"></a>
-</section> -->
