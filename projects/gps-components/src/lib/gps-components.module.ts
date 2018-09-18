@@ -13,7 +13,8 @@ import { CommonModule } from '@angular/common';
 import { NavOverlayComponent } from './nav-overlay/nav-overlay.component';
 import { AppsSidebarComponent } from './app-main-nav/apps-sidebar/apps-sidebar.component';
 import { DialogModule } from './dialog/dialog.module';
-
+import { ToPrettyPipe } from './pipes/to-pretty.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     A11yModule,
@@ -22,6 +23,8 @@ import { DialogModule } from './dialog/dialog.module';
     BrowserAnimationsModule,
     LibMaterialModule,
     DialogModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     GpsComponentsComponent,
@@ -32,6 +35,7 @@ import { DialogModule } from './dialog/dialog.module';
     TableComponent,
     NavOverlayComponent,
     AppsSidebarComponent,
+    ToPrettyPipe,
   ],
   entryComponents: [NavOverlayComponent],
   exports: [
@@ -40,6 +44,7 @@ import { DialogModule } from './dialog/dialog.module';
     TableComponent,
     AppsSidebarComponent,
     DialogModule,
+    ToPrettyPipe,
   ],
 })
 export class GpsComponentsModule {}

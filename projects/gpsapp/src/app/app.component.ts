@@ -31,12 +31,12 @@ export class AppComponent implements OnInit {
   public addresses: Array<address> = [];
   public loanAccounts: Array<loanAccount> = [];
   public goodAccountStatus: accountStatus = accountStatus.GOOD;
-  s;
   public bankruptAccountStatus: accountStatus = accountStatus.BANKRUPT;
   public delinquentAccountStatus: accountStatus = accountStatus.DELINQUENT;
   public writtenOffAccountStatus: accountStatus = accountStatus.WRITTEN_OFF;
   public chargedOffAccountStatus: accountStatus = accountStatus.CHARGED_OFF;
   public assignments: Array<Assignment> = [];
+  public activeApp: string;
   constructor(public dialog: DialogService) {}
 
   ngOnInit() {
@@ -102,14 +102,21 @@ export class AppComponent implements OnInit {
       this.assignments,
     );
   }
+  ngAfterContentChecked() {
+    this.activeApp = 'Home';
+  }
 
-  openDialog() {
-    const ref = this.dialog.open(ExampleComponent, {
-      data: { message: 'I am a dynamic component inside of a dialog!' },
-    });
-    ref.afterClosed.subscribe(result => {
-      console.log('Dialog closed', result);
-    });
+  // openDialog() {
+  //   const ref = this.dialog.open(ExampleComponent, {
+  //     data: { message: 'I am a dynamic component inside of a dialog!' },
+  //   });
+  //   ref.afterClosed.subscribe(result => {
+  //     console.log('Dialog closed', result);
+  //   });
+  // }
+
+  goToApp(app) {
+    this.activeApp = app;
   }
 
   getFullname() {

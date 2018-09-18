@@ -1,4 +1,13 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  Output,
+  EventEmitter,
+  OnInit,
+  AfterContentChecked,
+  AfterViewInit,
+} from '@angular/core';
 export class product {
   constructor(
     public id: string,
@@ -12,25 +21,30 @@ export class product {
   templateUrl: './apps-sidebar.component.html',
   styleUrls: ['./apps-sidebar.component.scss'],
 })
-export class AppsSidebarComponent {
-  @ViewChild('icon')
-  linkIcon: HTMLElement;
+export class AppsSidebarComponent implements AfterViewInit {
+  @Input()
+  activeApp: string;
+  @Output()
+  selectApp: EventEmitter<string> = new EventEmitter();
   @Input()
   globalProducts: Array<product>;
   @Input()
-  adminProducts: Array<product> = undefined;
+  adminProducts: Array<product>;
   constructor() {}
   @Input()
   employeeName: string;
   @Input()
   employeeRole: string;
+  currentApp: string;
 
-  public toPretty(str) {
-    var frags = str.split('_');
-    for (let i = 0; i < frags.length; i++) {
-      frags[i] = frags[i].toLowerCase();
-      frags[i] = frags[i].charAt(0).toUpperCase() + frags[i].slice(1);
-    }
-    return frags.join(' ');
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.currentApp = this.activeApp;
+    });
+  }
+
+  clickedProduct(product) {
+    this.currentApp = product.innerHTML;
+    this.selectApp.emit(product.innerHTML);
   }
 }

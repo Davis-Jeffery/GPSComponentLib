@@ -22,7 +22,9 @@ export class AppMainNav implements OnInit {
 
   constructor() {}
 
-  ngOnInit() { console.log(this.assignments)}
+  ngOnInit() {
+    console.log(this.assignments);
+  }
 
   toggleAppsSidebar() {
     this.appsSidebar.toggle();
