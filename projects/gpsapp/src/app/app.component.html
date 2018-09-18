@@ -1,6 +1,5 @@
 <div class="gpcl--site-frame">
   <gps-app-main-nav [appsSidebar]="appsSidebar" [reminders]="employeeAccount.reminders" [assignments]="employeeAccount.assignments"></gps-app-main-nav>
-  <!--  -->
   <mat-sidenav-container class="gpcl--main-body-content">
     <mat-sidenav role="navigation" class="sidebar-nav-container" #appsSidebar mode="side" fixedTopGap="64">
       <gps-apps-sidebar [activeApp]="activeApp" (selectApp)="goToApp($event)" [employeeName]="getFullname()"

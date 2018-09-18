@@ -78,6 +78,30 @@ export class AppComponent implements OnInit {
       ),
     );
 
+    this.reminders.push(
+      new Reminder(
+        '21323312',
+        false,
+        'Do Something',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        this.account,
+        undefined,
+        '9:00 AM - 5:00 PM',
+      ),
+    );
+
+    this.reminders.push(
+      new Reminder(
+        '21323312',
+        false,
+        'Do Something',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        this.account,
+        undefined,
+        '9:00 AM - 5:00 PM',
+      ),
+    );
+
     this.assignments.push(
       new Assignment(
         '312324',
@@ -89,7 +113,7 @@ export class AppComponent implements OnInit {
         '3:00 PM - 6:00 PM',
       ),
     );
-    //console.log(this.assignments);
+
     this.employeeAccount = new Employee(
       '234234244',
       'Jeff',
