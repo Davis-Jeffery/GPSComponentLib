@@ -1,12 +1,4 @@
-import {
-  Component,
-  Directive,
-  Input,
-  Output,
-  EventEmitter,
-  AfterViewInit,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, Directive, Input, ViewEncapsulation } from '@angular/core';
 export class Product {
   constructor(public id: string, public title: string, public icon: string) {}
 }
@@ -18,26 +10,26 @@ export class GpclNavSectionLabelDirective {}
 
 @Directive({
   selector: 'mat-nav-list[gpcl-nav-list]',
-  host: { class: 'gpcl--user-apps-list' },
+  host: { class: 'gpcl--apps-list' },
 })
 export class GpclNavListDirective {}
 
 @Directive({
-  selector: 'gpcl-nav-item-icon',
-  host: { class: 'link-icon' },
+  selector: 'svg[gpcl-nav-item-icon]',
+  host: { class: 'gpcl--nav-link-icon' },
 })
 export class GpclNavItemIconDirective {}
 
 @Directive({
   selector: 'span[gpcl-nav-item-text]',
-  host: { class: 'link-text' },
+  host: { class: 'gpcl--nav-link-text' },
 })
 export class GpclNavItemTextDirective {}
 
 @Component({
-  selector: 'gpcl-nav-item',
+  selector: 'mat-list-item[gpcl-nav-item]',
   templateUrl: './nav-item.component.html',
-  styleUrls: ['./nav-item.component.scss'],
+  host: { class: 'nav-link' },
   encapsulation: ViewEncapsulation.None,
 })
 export class GpclNavItemComponent {}
@@ -48,30 +40,10 @@ export class GpclNavItemComponent {}
   styleUrls: ['./apps-sidebar.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AppsSidebarComponent implements AfterViewInit {
-  @Input()
-  activeApp: string;
-  @Output()
-  selectApp: EventEmitter<string> = new EventEmitter();
-  @Input()
-  globalProducts: Array<Product>;
-  @Input()
-  adminProducts: Array<Product>;
+export class AppsSidebarComponent {
   constructor() {}
   @Input()
   employeeName: string;
   @Input()
   employeeRole: string;
-  currentApp: string;
-
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.currentApp = this.activeApp;
-    });
-  }
-
-  clickedProduct(product) {
-    this.currentApp = product.innerHTML;
-    this.selectApp.emit(product.innerHTML);
-  }
 }

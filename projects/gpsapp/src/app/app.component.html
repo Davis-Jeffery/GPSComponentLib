@@ -2,18 +2,23 @@
   <gps-app-main-nav [appsSidebar]="appsSidebar" [reminders]="employeeAccount.reminders" [assignments]="employeeAccount.assignments"></gps-app-main-nav>
   <mat-sidenav-container class="gpcl--main-body-content">
     <mat-sidenav role="navigation" class="sidebar-nav-container" [opened]="true" #appsSidebar mode="side" fixedTopGap="64">
-      <gps-apps-sidebar [activeApp]="activeApp" (selectApp)="goToApp($event)" [employeeName]="getFullname()"
-        [employeeRole]="employeeAccount.accessLevel">
-        <label gpcl-nav-section-label>Admin</label>
+      <gps-apps-sidebar [employeeName]="getFullname()" [employeeRole]="employeeAccount.accessLevel">
         <mat-nav-list gpcl-nav-list>
-          <gpcl-nav-item>
-            <gpcl-nav-item-icon>
-              <svg style="height:24px; width:24px" viewBox="0 0 24 24">
-                <path d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75M12,15C13.5,15 16.5,15.75 16.5,17.25V18H7.5V17.25C7.5,15.75 10.5,15 12,15Z" />
-              </svg>
-            </gpcl-nav-item-icon>
-            <span gpcl-nav-item-text>sdfdsf</span>
-          </gpcl-nav-item>
+          <a mat-list-item gpcl-nav-item *ngFor="let globalProduct of this.employeeAccount.globalProducts">
+            <svg gpcl-nav-item-icon viewBox="0 0 24 24">
+              <path [attr.d]="globalProduct.icon" />
+            </svg>
+            <span gpcl-nav-item-text>{{globalProduct.title}}</span>
+          </a>
+        </mat-nav-list>
+        <mat-nav-list gpcl-nav-list>
+          <label gpcl-nav-section-label>Admin</label>
+          <a mat-list-item gpcl-nav-item *ngFor="let adminProduct of this.employeeAccount.adminProducts">
+            <svg gpcl-nav-item-icon viewBox="0 0 24 24">
+              <path [attr.d]="adminProduct.icon" />
+            </svg>
+            <span gpcl-nav-item-text>{{adminProduct.title}}</span>
+          </a>
         </mat-nav-list>
       </gps-apps-sidebar>
     </mat-sidenav>

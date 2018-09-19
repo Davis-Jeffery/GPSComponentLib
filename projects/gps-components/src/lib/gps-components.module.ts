@@ -6,7 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LibMaterialModule } from './lib-material.module';
 import { AppMainNavComponent } from './app-main-nav/app-main-nav.component';
 import { RemindersComponent } from './app-main-nav/reminders/reminders.component';
-import { AssignmentsComponent } from './app-main-nav/assignments/assignments.component';
+import {
+  AssignmentsComponent,
+  AssignmentsOverlayComponent,
+} from './app-main-nav/assignments/assignments.component';
 import { ShellSearchComponent } from './app-main-nav/shell-search/shell-search.component';
 import { A11yModule } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
@@ -37,6 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RemindersComponent,
     ShellSearchComponent,
     AssignmentsComponent,
+    AssignmentsOverlayComponent,
     TableComponent,
     NavOverlayComponent,
     AppsSidebarComponent,
@@ -47,7 +51,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GpclNavItemComponent,
     ToPrettyPipe,
   ],
-  entryComponents: [NavOverlayComponent],
+  entryComponents: [NavOverlayComponent, AssignmentsOverlayComponent],
   exports: [
     GpsComponentsComponent,
     AppMainNavComponent,

@@ -45,37 +45,28 @@
   }
 }
 
-.gpcl--links-section {
-  .gpcl--user-apps-list {
-    .app-link {
-      .link-icon,
-      .link-text {
-        display: inline-block;
-        vertical-align: middle;
-      }
-      .link-icon {
-        margin-right: rem(24);
-        svg {
-          width: rem(24);
-          height: rem(24);
-          fill: $accent-text;
-        }
-      }
-      &.active {
-        .link-icon,
-        .link-text {
-          color: $primary;
-          svg {
-            fill: $primary;
-          }
-        }
-      }
-    }
-  }
-  .gpcl--nav-label {
-    font-size: rem(12);
-    color: $accent-text;
-    display: block;
-    padding: rem(16);
+.gpcl--nav-label {
+  font-size: rem(12);
+  color: $accent-text;
+  display: block;
+  padding: rem(12) rem(16);
+}
+
+.gpcl--nav-link-icon {
+  margin-right: rem(24);
+  width: rem(24);
+  height: rem(24);
+  fill: $accent-text;
+  display: inline-block;
+  vertical-align: middle;
+}
+.gpcl--nav-link-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.mat-nav-list {
+  &.gpcl--apps-list {
+    padding-top: 0px;
   }
 }
