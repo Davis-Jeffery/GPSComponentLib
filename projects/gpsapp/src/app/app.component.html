@@ -2,8 +2,24 @@
   <gps-app-main-nav [appsSidebar]="appsSidebar" [reminders]="employeeAccount.reminders" [assignments]="employeeAccount.assignments"></gps-app-main-nav>
   <mat-sidenav-container class="gpcl--main-body-content">
     <mat-sidenav role="navigation" class="sidebar-nav-container" [opened]="true" #appsSidebar mode="side" fixedTopGap="64">
-      <gps-apps-sidebar [activeApp]="activeApp" (selectApp)="goToApp($event)" [employeeName]="getFullname()"
-        [employeeRole]="employeeAccount.accessLevel" [globalProducts]="employeeAccount.globalProducts" [adminProducts]="employeeAccount.AdminProducts">
+      <gps-apps-sidebar [employeeName]="getFullname()" [employeeRole]="employeeAccount.accessLevel">
+        <mat-nav-list gpcl-nav-list>
+          <a mat-list-item gpcl-nav-item *ngFor="let globalProduct of this.employeeAccount.globalProducts">
+            <svg gpcl-nav-item-icon viewBox="0 0 24 24">
+              <path [attr.d]="globalProduct.icon" />
+            </svg>
+            <span gpcl-nav-item-text>{{globalProduct.title}}</span>
+          </a>
+        </mat-nav-list>
+        <mat-nav-list gpcl-nav-list>
+          <label gpcl-nav-section-label>Admin</label>
+          <a mat-list-item gpcl-nav-item *ngFor="let adminProduct of this.employeeAccount.adminProducts">
+            <svg gpcl-nav-item-icon viewBox="0 0 24 24">
+              <path [attr.d]="adminProduct.icon" />
+            </svg>
+            <span gpcl-nav-item-text>{{adminProduct.title}}</span>
+          </a>
+        </mat-nav-list>
       </gps-apps-sidebar>
     </mat-sidenav>
     <mat-sidenav-content role="main">

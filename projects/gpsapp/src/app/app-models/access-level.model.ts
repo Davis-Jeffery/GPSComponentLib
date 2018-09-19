@@ -7,10 +7,8 @@ import {
   goldViewPlus,
   accounting,
   notificationSetup,
-  fileManager,
 } from './product.model';
 
-// import { checkAndUpdateElementInline } from "@angular/core/src/view/element";
 export enum AccessLevel {
   ADMIN = 'ADMIN',
   TELLER_AGENT = 'TELLER_AGENT',
@@ -43,13 +41,7 @@ export function getAdminProductsByAccessLevel(
 ): Array<Product> {
   switch (accessLevel) {
     case AccessLevel.ADMIN:
-      return [
-        systemSetup,
-        goldViewPlus,
-        accounting,
-        notificationSetup,
-        fileManager,
-      ];
+      return [systemSetup, goldViewPlus, accounting, notificationSetup];
     case AccessLevel.COLLECTIONS_AGENT:
       return undefined;
     case AccessLevel.TELLER_AGENT:
