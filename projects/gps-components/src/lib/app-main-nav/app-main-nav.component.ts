@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-import { Component, OnInit, Input, ViewEncapsulation } from "@angular/core";
+import { Component, Input, ViewEncapsulation } from "@angular/core";
 import { MatDrawer } from "@angular/material";
-// import { Reminder } from './reminders/reminders.component';
-=======
-import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { MatDrawer } from '@angular/material';
->>>>>>> origin
 
 @Component({
   selector: "gps-app-main-nav",

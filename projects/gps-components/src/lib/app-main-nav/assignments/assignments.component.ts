@@ -1,29 +1,18 @@
-<<<<<<< HEAD
-import { Component, OnInit, Input } from "@angular/core";
-import { MatDialog, MatDialogConfig } from "@angular/material";
-import { NavOverlayComponent } from "../../nav-overlay/nav-overlay.component";
-
-@Component({
-  selector: "gps-assignments",
-  templateUrl: "./assignments.component.html",
-  styleUrls: ["./assignments.component.scss"]
-=======
 import {
   Component,
   OnInit,
   Input,
   Inject,
   ViewChild,
-  ElementRef,
-} from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+  ElementRef
+} from "@angular/core";
+import { MatDialog } from "@angular/material";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 
 @Component({
-  selector: 'gps-assignments',
-  templateUrl: './assignments.component.html',
-  styleUrls: ['./assignments.component.scss'],
->>>>>>> origin
+  selector: "gps-assignments",
+  templateUrl: "./assignments.component.html",
+  styleUrls: ["./assignments.component.scss"]
 })
 export class AssignmentsComponent implements OnInit {
   @Input()
@@ -49,43 +38,21 @@ export class AssignmentsComponent implements OnInit {
   ngOnInit() {}
 
   openDialog() {
-<<<<<<< HEAD
-    this.dialog.closeAll();
-
-    this.dialog.open(NavOverlayComponent, {
-      id: "assignments-dialog",
-      maxWidth: this.maxWidth,
-      minWidth: this.minWidth,
-      width: this.width,
-      autoFocus: false,
-      hasBackdrop: false,
-
-      data: {
-        data: this.assignments,
-        title: "Assignments",
-        seeAllButton: true
-      },
-      position: {
-        top: "68px",
-        right: "16px"
-      }
-=======
     this.dialog.open(AssignmentsOverlayComponent, {
       data: {
         data: this.assignments,
-        title: 'Assignments',
+        title: "Assignments"
       },
       maxWidth: this.maxWidth,
       minWidth: this.minWidth,
       width: this.width,
       position: {
-        top: '68px',
-        right: '16px',
+        top: "68px",
+        right: "16px"
       },
-      id: 'assignents',
+      id: "assignents",
       autoFocus: false,
-      hasBackdrop: false,
->>>>>>> origin
+      hasBackdrop: false
     });
   }
 }
@@ -94,11 +61,11 @@ export class Description {
 }
 
 @Component({
-  selector: 'gps-assignments-overlay',
-  templateUrl: './overlay-assignments.component.html',
+  selector: "gps-assignments-overlay",
+  templateUrl: "./overlay-assignments.component.html"
 })
 export class AssignmentsOverlayComponent implements OnInit {
-  @ViewChild('assignmentsRef')
+  @ViewChild("assignmentsRef")
   assignmentsElement: ElementRef;
   public overlayDataItems: Array<any>;
   public stringLength: string;
@@ -106,7 +73,7 @@ export class AssignmentsOverlayComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AssignmentsOverlayComponent>,
-    @Inject(MAT_DIALOG_DATA) public overlayData,
+    @Inject(MAT_DIALOG_DATA) public overlayData
   ) {
     this.overlayDataItems = overlayData.data;
   }
