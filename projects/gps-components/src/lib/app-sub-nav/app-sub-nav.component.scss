@@ -9,6 +9,8 @@
   align-items: center;
   justify-content: space-between;
   height: 56px;
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
   .left-of-header {
     font-size: rem(18);
@@ -26,6 +28,7 @@
   }
 
   .end-icons {
+    fill: rgba(0, 0, 0, 0.54);
     margin-left: rem(64);
   }
 

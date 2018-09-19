@@ -1,3 +1,5 @@
+import { FileServicesComponent } from "./app-sub-nav/file-services/file-services.component";
+import { AppSubNavComponent } from "./app-sub-nav/app-sub-nav.component";
 import { CustomerContactComponent } from "./app-sub-nav/customer-contact/customer-contact.component";
 import { CustomerNotesComponent } from "./app-sub-nav/customer-notes/customer-notes.component";
 import { BrowserModule } from "@angular/platform-browser";
@@ -34,6 +36,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AssignmentsComponent,
     CustomerNotesComponent,
     CustomerContactComponent,
+    FileServicesComponent,
+    AppSubNavComponent,
+    CustomerNotesComponent,
+    CustomerContactComponent,
     TableComponent,
     NavOverlayComponent,
     AppsSidebarComponent,
@@ -45,7 +51,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AppMainNavComponent,
     TableComponent,
     AppsSidebarComponent,
-    ToPrettyPipe
+    ToPrettyPipe,
+    AppSubNavComponent
   ]
 })
 export class GpsComponentsModule {}

@@ -3,11 +3,11 @@ import { MatDialog } from "@angular/material";
 import { NavOverlayComponent } from "../../nav-overlay/nav-overlay.component";
 
 @Component({
-  selector: "gps-customer-contact",
-  templateUrl: "./customer-contact.component.html",
-  styleUrls: ["./customer-contact.component.scss"]
+  selector: "gps-file-services",
+  templateUrl: "./file-services.component.html",
+  styleUrls: ["./file-services.component.scss"]
 })
-export class CustomerContactComponent implements OnInit {
+export class FileServicesComponent implements OnInit {
   @Input()
   width: string = "500px";
 
@@ -19,14 +19,14 @@ export class CustomerContactComponent implements OnInit {
     this.dialog.closeAll();
 
     this.dialog.open(NavOverlayComponent, {
-      id: "customer-contact-dialog",
+      id: "file-services-dialog",
       width: this.width,
       autoFocus: false,
       hasBackdrop: false,
 
       data: {
-        title: "Customer Contact",
-        seeAllButton: false
+        title: "File Attachments",
+        seeAllButton: true
       },
 
       position: {

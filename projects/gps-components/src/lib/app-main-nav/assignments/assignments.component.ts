@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { NavOverlayComponent } from '../../nav-overlay/nav-overlay.component';
+import { Component, OnInit, Input } from "@angular/core";
+import { MatDialog, MatDialogConfig } from "@angular/material";
+import { NavOverlayComponent } from "../../nav-overlay/nav-overlay.component";
 
 @Component({
-  selector: 'gps-assignments',
-  templateUrl: './assignments.component.html',
-  styleUrls: ['./assignments.component.scss']
+  selector: "gps-assignments",
+  templateUrl: "./assignments.component.html",
+  styleUrls: ["./assignments.component.scss"]
 })
 export class AssignmentsComponent implements OnInit {
   @Input()
@@ -18,9 +18,9 @@ export class AssignmentsComponent implements OnInit {
   @Input()
   minHeight: string;
   @Input()
-  height = '400px';
+  height = "400px";
   @Input()
-  width = '500px';
+  width = "500px";
   @Input()
   assignments: Array<any>;
   @Input()
@@ -33,23 +33,22 @@ export class AssignmentsComponent implements OnInit {
     this.dialog.closeAll();
 
     this.dialog.open(NavOverlayComponent, {
+      id: "assignments-dialog",
+      maxWidth: this.maxWidth,
+      minWidth: this.minWidth,
+      width: this.width,
+      autoFocus: false,
+      hasBackdrop: false,
+
       data: {
         data: this.assignments,
-        title: 'Assignments'
+        title: "Assignments",
+        seeAllButton: true
       },
-      maxWidth: this.maxWidth,
-      // maxHeight: this.maxHeight,
-      minWidth: this.minWidth,
-      // minHeight: this.minHeight,
-      // height: this.height,
-      width: this.width,
       position: {
-        top: '68px',
-        right: '16px'
-      },
-      id: 'assignments-dialog',
-      autoFocus: false,
-      hasBackdrop: false
+        top: "68px",
+        right: "16px"
+      }
     });
   }
 }

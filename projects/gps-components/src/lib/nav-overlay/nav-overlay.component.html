@@ -40,14 +40,13 @@
               Show <span *ngIf="descriptions[i].isSeeMore">Less</span><span *ngIf="!descriptions[i].isSeeMore">More</span>
             </a>
           </p>
-
         </div>
       </div>
     </div>
 
   </mat-dialog-content>
 
-  <mat-dialog-actions class="footer">
+  <mat-dialog-actions class="footer" *ngIf="seeAllbutton">
     <button mat-stroked-button color="primary" [matDialogClose]="true">See All</button>
   </mat-dialog-actions>
 </div>

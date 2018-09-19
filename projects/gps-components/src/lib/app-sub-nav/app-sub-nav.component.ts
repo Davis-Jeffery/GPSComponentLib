@@ -5,7 +5,7 @@ import { Component, OnInit, Inject } from "@angular/core";
   templateUrl: "./app-sub-nav.component.html",
   styleUrls: ["./app-sub-nav.component.scss"]
 })
-export class AppSubNav implements OnInit {
+export class AppSubNavComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
