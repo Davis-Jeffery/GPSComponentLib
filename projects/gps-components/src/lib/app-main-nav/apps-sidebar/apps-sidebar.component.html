@@ -19,7 +19,23 @@
   </div>
 </section>
 <section class="gpcl--links-section">
-  <mat-nav-list class="gpcl--user-apps-list non-admin">
+  <ng-content select="label[gpcl-nav-section-label]">
+  </ng-content>
+  <ng-content select="[gpcl-nav-list], mat-nav-list[gpcl-nav-list">
+  </ng-content>
+</section>
+<!-- <section class="gpcl--links-section"> -->
+<!-- <mat-nav-list class="gpcl--user-apps-list">
+    <a class="gpcl--nav-item" mat-list-item>
+      <ng-content select="gpcl-nav-item-icon,[gpcl-nav-item-icon]">
+
+      </ng-content>
+      <ng-content select="gpcl-nav-item-text, [gpcl-nav-item-text]">
+
+      </ng-content>
+    </a>
+  </mat-nav-list> -->
+<!-- <mat-nav-list class="gpcl--user-apps-list non-admin">
     <a mat-list-item [ngClass]="{'active' : this.currentApp === globalProductTitle.innerHTML}" (click)="clickedProduct(globalProductTitle)"
       class="app-link" *ngFor="let globalProduct of globalProducts">
       <span class="link-icon">
@@ -29,9 +45,9 @@
       </span>
       <span class="link-text" #globalProductTitle>{{globalProduct.title}}</span>
     </a>
-  </mat-nav-list>
-</section>
-<section class="gpcl--links-section" *ngIf="adminProducts">
+  </mat-nav-list> -->
+<!-- </section> -->
+<!-- <section class="gpcl--links-section" *ngIf="adminProducts">
   <label class="gpcl--nav-label">Admin</label>
   <mat-nav-list class="gpcl--user-apps-list admin">
     <a mat-list-item class="app-link" [ngClass]="{'active' : this.currentApp === adminProductTitle.innerHTML}" (click)="clickedProduct(adminProductTitle)"
@@ -44,4 +60,4 @@
       <span class="link-text" #adminProductTitle>{{adminProduct.title}}</span>
     </a>
   </mat-nav-list>
-</section>
+</section> -->

@@ -83,6 +83,7 @@ export const notificationSetup: Product = new Product(
   13L15.53,13.5C15.65,13.5 15.78,13.5 15.84,13.37L16.84,11.64C16.9,
   11.53 16.87,11.4 16.77,11.32Z`
 );
+<<<<<<< HEAD
 
 export const fileManager: Product = new Product(
   "8",
@@ -93,3 +94,5 @@ export const fileManager: Product = new Product(
    19V20H14M10,12A2,2 0 0,0 8,14A2,2 0 0,
    0 10,16A2,2 0 0,0 12,14A2,2 0 0,0 10,12Z`
 );
+=======
+>>>>>>> origin

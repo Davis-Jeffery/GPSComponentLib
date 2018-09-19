@@ -11,7 +11,7 @@ export class Employee {
     public lastName: string,
     public accessLevel: AccessLevel,
     public globalProducts: Array<Product>,
-    public AdminProducts: Array<Product>,
+    public adminProducts: Array<Product>,
     public reminders: Array<Reminder>,
     public assignments?: Array<Assignment>,
   ) {}
