@@ -1,14 +1,16 @@
-@import '../../../lib-atom/partials/_sizes.scss';
-@import '../../../lib-atom/partials/_buttons.scss';
-@import '../../../lib-atom/partials/_nav-overlay.scss';
-@import './_app-main-nav-theme.scss';
-@import '~@angular/material/theming';
+@import "../../../lib-atom/partials/_sizes.scss";
+@import "../../../lib-atom/partials/_buttons.scss";
+@import "../../../lib-atom/partials/_nav-overlay.scss";
+@import "./_app-main-nav-theme.scss";
+@import "~@angular/material/theming";
 
 .gpcl--main-header-container {
   display: flex;
   align-items: center;
+  z-index: 9999;
+  position: relative;
   justify-content: space-between;
-  @include mat-elevation(3);
+  @include mat-elevation(1);
   height: 56px;
   &.primary {
     @include angular-material-theme($nav-theme-dark);
