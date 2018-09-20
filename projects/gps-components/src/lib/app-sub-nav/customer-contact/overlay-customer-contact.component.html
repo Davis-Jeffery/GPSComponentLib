@@ -1,0 +1,64 @@
+<div class="gpcl--icon-overlay" #assignmentsRef>
+  <div mat-dialog-title class="header">
+    <span>Customer Contact</span>
+  </div>
+
+  <mat-dialog-content class="gpcl--nav-overlay-scroll-container">
+    <div class="input-row">
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-select placeholder="email">
+          <mat-option>
+            JohnDoe@email.com
+            <!-- *ngFor="let food of foods" [value]="food.value" -->
+            <!-- {{food.viewValue}} -->
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-stroked-button>
+        Email
+      </button>
+    </div>
+    <div class="input-row">
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-select placeholder="Phone">
+          <mat-option>
+            Primary: (888) 888-8888
+            <!-- *ngFor="let food of foods" [value]="food.value" -->
+            <!-- {{food.viewValue}} -->
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-stroked-button>
+        Call
+      </button>
+    </div>
+    <div class="input-row">
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-select>
+          <mat-option>
+            Primary: (888) 888-8888
+            <!-- *ngFor="let food of foods" [value]="food.value" -->
+            <!-- {{food.viewValue}} -->
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-stroked-button>
+        Text
+      </button>
+    </div>
+    <div class="input-row">
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-select>
+          <mat-option>
+            545 Lexignton Ave, New York, NY 10023
+            <!-- *ngFor="let food of foods" [value]="food.value" -->
+            <!-- {{food.viewValue}} -->
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-stroked-button>
+        Mail
+      </button>
+    </div>
+  </mat-dialog-content>
+</div>

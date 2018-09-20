@@ -67,6 +67,7 @@ export class AssignmentsComponent implements OnInit {
     });
   }
 }
+
 export class Description {
   constructor(public descriptionText: string, public isSeeMore: boolean) {}
 }

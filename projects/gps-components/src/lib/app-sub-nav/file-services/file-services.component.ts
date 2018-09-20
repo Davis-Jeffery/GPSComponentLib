@@ -16,7 +16,16 @@ export class FileServicesComponent implements OnInit {
   ngOnInit() {}
 
   openDialog() {
-    this.dialog.closeAll();
+    for (var key in this.dialog.openDialogs) {
+      if (this.dialog.openDialogs[key].id != "file-services-dialog") {
+        this.dialog.openDialogs[key].close();
+      }
+
+      if (this.dialog.openDialogs[key].id === "file-services-dialog") {
+        this.dialog.openDialogs[key].close();
+        return;
+      }
+    }
 
     this.dialog.open(NavOverlayComponent, {
       id: "file-services-dialog",

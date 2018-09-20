@@ -1,4 +1,7 @@
-import { CustomerContactComponent } from "./app-sub-nav/customer-contact/customer-contact.component";
+import {
+  CustomerContactComponent,
+  OverlayCustomerContactComponent
+} from "./app-sub-nav/customer-contact/customer-contact.component";
 import { CustomerNotesComponent } from "./app-sub-nav/customer-notes/customer-notes.component";
 import { FileServicesComponent } from "./app-sub-nav/file-services/file-services.component";
 import { AppSubNavComponent } from "./app-sub-nav/app-sub-nav.component";
@@ -51,6 +54,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AssignmentsComponent,
     AssignmentsOverlayComponent,
     RemindersOverlayComponent,
+    OverlayCustomerContactComponent,
     TableComponent,
     NavOverlayComponent,
     AppSubNavComponent,
@@ -68,7 +72,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
   entryComponents: [
     NavOverlayComponent,
     AssignmentsOverlayComponent,
-    RemindersOverlayComponent
+    RemindersOverlayComponent,
+    OverlayCustomerContactComponent
   ],
   exports: [
     GpsComponentsComponent,
