@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Reminder } from './app-models/reminder.model';
 import { Assignment } from './app-models/assignment.model';
 
@@ -8,10 +8,10 @@ import {
   getGlobalProductsByAccessLevel,
   getAdminProductsByAccessLevel,
 } from './app-models/access-level.model';
-import { CustomerAccount } from './app-models/customer-account.model';
-import { LoanAccount } from './app-models/loan-account.model';
-import { Address } from './app-models/address.model';
-import { accountStatus } from './app-models/account-status.model';
+import { Observable } from 'rxjs';
+import { EmployeeService } from './services/employee.service';
+import { Product } from './app-models/product.model';
+import { RemindersService } from './services/reminders.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,129 +19,35 @@ import { accountStatus } from './app-models/account-status.model';
 })
 export class AppComponent implements OnInit {
   public title = 'gpsapp';
-  public employeeAccount: Employee;
-  public adminAccess: AccessLevel = AccessLevel.ADMIN;
-  public tellerAccess: AccessLevel = AccessLevel.TELLER_AGENT;
-  public collectionsAccess: AccessLevel = AccessLevel.COLLECTIONS_AGENT;
-  public reminders: Array<Reminder> = [];
-  public account: CustomerAccount;
-  public addresses: Array<Address> = [];
-  public loanAccounts: Array<LoanAccount> = [];
-  public goodAccountStatus: accountStatus = accountStatus.GOOD;
-  public bankruptAccountStatus: accountStatus = accountStatus.BANKRUPT;
-  public delinquentAccountStatus: accountStatus = accountStatus.DELINQUENT;
-  public writtenOffAccountStatus: accountStatus = accountStatus.WRITTEN_OFF;
-  public chargedOffAccountStatus: accountStatus = accountStatus.CHARGED_OFF;
-  public assignments: Array<Assignment> = [];
   public activeApp = 'Home';
-  constructor() {}
+  public employee: Employee;
+  public reminders: Array<Reminder> = [];
+  public fullName: string;
+  public accessLevel: AccessLevel;
+  public adminProducts: Array<Product>;
+  public globalProducts: Array<Product>;
+  constructor(
+    public employeeService: EmployeeService,
+    public remindersService: RemindersService,
+  ) {}
 
-  ngOnInit() {
-    this.loanAccounts.push(
-      new LoanAccount(
-        '8943kfj',
-        '2017 Chevrolet Tahoe',
-        'Auto',
-        12000,
-        '4.5%',
-        '12/12',
-        this.goodAccountStatus,
-      ),
-    );
-    this.addresses.push(new Address('1080 E 700 N', 'Provo', 'Utah', '84660'));
-    this.addresses.push(
-      new Address('1600 E 700 N', 'New York', 'New York', '90210'),
-    );
-    this.account = new CustomerAccount(
-      'John',
-      'Does',
-      '999-99-9999',
-      this.addresses,
-      'timmy',
-      undefined,
-      this.loanAccounts,
-      undefined,
-    );
+  async ngOnInit() {
+    this.employeeService.getEmployeeAccount(1).subscribe(employee => {
+      console.log(employee);
+      this.employee = employee;
+      this.fullName = this.employeeService.getFullname();
+      this.accessLevel = employee.accessLevel;
+      this.adminProducts = employee.adminProducts;
+      this.globalProducts = employee.globalProducts;
+    });
 
-    this.reminders.push(
-      new Reminder(
-        '21323312',
-        false,
-        'Do Something',
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat.`,
-        this.account,
-        undefined,
-        '9:00 AM - 5:00 PM',
-      ),
-    );
-
-    this.reminders.push(
-      new Reminder(
-        '21323312',
-        false,
-        'Do Something',
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.`,
-        this.account,
-        undefined,
-        '9:00 AM - 5:00 PM',
-      ),
-    );
-
-    this.reminders.push(
-      new Reminder(
-        '21323312',
-        false,
-        'Do Something',
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.`,
-        this.account,
-        undefined,
-        '9:00 AM - 5:00 PM',
-      ),
-    );
-
-    this.assignments.push(
-      new Assignment(
-        '312324',
-        false,
-        'Do Something else',
-        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat.`,
-        this.account,
-        undefined,
-        '3:00 PM - 6:00 PM',
-      ),
-    );
-
-    this.employeeAccount = new Employee(
-      '234234244',
-      'Jeff',
-      'Todd',
-      'Davis',
-      this.adminAccess,
-      getGlobalProductsByAccessLevel(this.adminAccess),
-      getAdminProductsByAccessLevel(this.adminAccess),
-      this.reminders,
-      this.assignments,
-    );
+    this.remindersService.getEmpoyeeReminders(1).subscribe(reminders => {
+      this.reminders = reminders;
+      console.log(reminders);
+    });
   }
 
   goToApp(app) {
     this.activeApp = app;
-  }
-
-  getFullname() {
-    return this.employeeAccount.firstName + ' ' + this.employeeAccount.lastName;
   }
 }

@@ -30,23 +30,25 @@ export class RemindersComponent implements OnInit {
   ngOnInit() {}
 
   openDialog() {
-    this.dialog.closeAll();
-
-    this.dialog.open(NavOverlayComponent, {
-      data: {
-        data: this.reminders,
-        title: 'Reminders',
-      },
-      maxWidth: this.maxWidth,
-      minWidth: this.minWidth,
-      width: this.width,
-      position: {
-        top: '68px',
-        right: '50px',
-      },
-      id: 'reminders-dialog',
-      autoFocus: false,
-      hasBackdrop: false,
-    });
+    if (this.dialog.openDialogs.length) {
+      this.dialog.openDialogs[1].close();
+    } else {
+      this.dialog.open(NavOverlayComponent, {
+        data: {
+          data: this.reminders,
+          title: 'Reminders',
+        },
+        maxWidth: this.maxWidth,
+        minWidth: this.minWidth,
+        width: this.width,
+        position: {
+          top: '68px',
+          right: '50px',
+        },
+        id: 'reminders-dialog',
+        autoFocus: false,
+        hasBackdrop: false,
+      });
+    }
   }
 }

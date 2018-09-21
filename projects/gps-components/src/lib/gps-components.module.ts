@@ -24,6 +24,7 @@ import {
 } from './app-main-nav/apps-sidebar/apps-sidebar.component';
 import { ToPrettyPipe } from './pipes/to-pretty.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AssignmentsStore } from './app-main-nav/assignments/assignments.store';
 @NgModule({
   imports: [
     A11yModule,
@@ -51,6 +52,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GpclNavItemComponent,
     ToPrettyPipe,
   ],
+  providers: [AssignmentsStore],
   entryComponents: [NavOverlayComponent, AssignmentsOverlayComponent],
   exports: [
     GpsComponentsComponent,

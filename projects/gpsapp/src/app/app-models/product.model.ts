@@ -1,9 +1,9 @@
 export class Product {
-  constructor(public id: string, public title: string, public icon: string) {}
+  constructor(public id: number, public title: string, public icon: string) {}
 }
 
 export const home: Product = new Product(
-  '1',
+  1,
   'Home',
   `M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,
   1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,
@@ -12,7 +12,7 @@ export const home: Product = new Product(
 );
 
 export const tellerDrawer: Product = new Product(
-  '2',
+  2,
   'Teller Drawer',
   `M15,14V11H18V9L22,12.5L18,16V14H15M14,7.7V9H2V7.7L8,4L14,
   7.7M7,10H9V15H7V10M3,10H5V15H3V10M13,10V12.5L11,14.3V10H13M9.1,
@@ -20,7 +20,7 @@ export const tellerDrawer: Product = new Product(
 );
 
 export const collections: Product = new Product(
-  '3',
+  3,
   'Collections',
   `M5,6H23V18H5V6M14,9A3,3 0 0,1 17,12A3,
   3 0 0,1 14,15A3,3 0 0,1 11,12A3,3 0 0,
@@ -30,7 +30,7 @@ export const collections: Product = new Product(
 );
 
 export const systemSetup: Product = new Product(
-  '4',
+  4,
   'System Setup',
   `M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,
   3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,
@@ -38,7 +38,7 @@ export const systemSetup: Product = new Product(
 );
 
 export const goldViewPlus: Product = new Product(
-  '5',
+  5,
   'GOLDView Plus',
   `M3,13H7V23H3V13M10,14H14V23H10V14M17,
   9H21V23H17V9M17,1H21V5H20V3.06L11.97,
@@ -47,7 +47,7 @@ export const goldViewPlus: Product = new Product(
 );
 
 export const accounting: Product = new Product(
-  '6',
+  6,
   'Accounting',
   `M14,12H15.5V14.82L17.94,16.23L17.19,17.53L14,15.69V12M4,2H18A2,
   2 0 0,1 20,4V10.1C21.24,11.36 22,13.09 22,15A7,7 0 0,1 15,22C13.09,22
@@ -60,7 +60,7 @@ export const accounting: Product = new Product(
 );
 
 export const notificationSetup: Product = new Product(
-  '7',
+  7,
   'Notification Setup',
   `M13.5,10A1.5,1.5 0 0,1 12,11.5C11.16,11.5 10.5,10.83 10.5,
   10A1.5,1.5 0 0,1 12,8.5A1.5,1.5 0 0,1 13.5,10M22,4V16A2,

@@ -6,7 +6,7 @@ import {
   ViewChild,
   ElementRef,
 } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
@@ -65,8 +65,6 @@ export class Description {
   templateUrl: './overlay-assignments.component.html',
 })
 export class AssignmentsOverlayComponent implements OnInit {
-  @ViewChild('assignmentsRef')
-  assignmentsElement: ElementRef;
   public overlayDataItems: Array<any>;
   public stringLength: string;
   public descriptions: Array<Description> = [];

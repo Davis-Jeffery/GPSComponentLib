@@ -1,10 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { GpsComponentsModule } from 'gps-components';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomAngularMaterialModule } from './angular-material.module';
+import { AccessLevelService } from './services/access-level.service';
+import { AssignmentsService } from './services/assignments.service';
+import { CustomerAccountService } from './services/customer-account.service';
+import { EmployeeService } from './services/employee.service';
+import { RemindersService } from './services/reminders.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,8 +18,15 @@ import { CustomAngularMaterialModule } from './angular-material.module';
     GpsComponentsModule,
     BrowserAnimationsModule,
     CustomAngularMaterialModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    AccessLevelService,
+    AssignmentsService,
+    CustomerAccountService,
+    EmployeeService,
+    RemindersService,
+  ],
   entryComponents: [],
   bootstrap: [AppComponent],
 })
