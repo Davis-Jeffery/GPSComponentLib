@@ -1,11 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  Inject,
-  ViewChild,
-  ElementRef,
-} from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
@@ -38,6 +31,17 @@ export class AssignmentsComponent implements OnInit {
   ngOnInit() {}
 
   openDialog() {
+    for (var key in this.dialog.openDialogs) {
+      if (this.dialog.openDialogs[key].id != 'assignments-dialog') {
+        this.dialog.openDialogs[key].close();
+      }
+
+      if (this.dialog.openDialogs[key].id === 'assignments-dialog') {
+        this.dialog.openDialogs[key].close();
+        return;
+      }
+    }
+
     this.dialog.open(AssignmentsOverlayComponent, {
       data: {
         data: this.assignments,
@@ -50,12 +54,13 @@ export class AssignmentsComponent implements OnInit {
         top: '68px',
         right: '16px',
       },
-      id: 'assignents',
+      id: 'assignments-dialog',
       autoFocus: false,
       hasBackdrop: false,
     });
   }
 }
+
 export class Description {
   constructor(public descriptionText: string, public isSeeMore: boolean) {}
 }
