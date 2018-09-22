@@ -34,21 +34,6 @@ export class EmployeeService {
   getEmployeeAccount(id: number): Observable<Employee> {
     return this.http
       .get<Employee>(this.url + id)
-      .pipe(
-        map(
-          employee =>
-            (this.employee = new Employee(
-              employee.id,
-              employee.firstName,
-              employee.middleName,
-              employee.lastName,
-              employee.accessLevel,
-              employee.globalProducts,
-              employee.adminProducts,
-              employee.reminders,
-              employee.assignments,
-            )),
-        ),
-      );
+      .pipe(map(employee => employee));
   }
 }

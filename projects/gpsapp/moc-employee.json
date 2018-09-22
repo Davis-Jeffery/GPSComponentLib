@@ -2,58 +2,58 @@
   "employees" : [
       {
       "id": 1,
-      "firstName" : "Jeff",
-      "middleName": "Todd",
-      "lastName" : "Davis",
-      "accessLevel": "COLLECTIONS_AGENT",
-      "globalProductId": [1,2],
-      "adminProductId": [1,2],
-      "reminderId": 2,
-      "assignmentId": [1,2]
+      "firstName" : "Michael",
+      "middleName": "B.",
+      "lastName" : "Jordan",
+      "accessLevel": "ADMIN"
     },
     {
       "id": 2,
-      "firstName" : "Jeff",
-      "middleName": "Todd",
-      "lastName" : "Davis",
-      "accessLevel": "COLLECTIONS_AGENT",
-      "globalProductId": [1],
-      "adminProductId": 1,
-      "reminderId": [1,2],
-      "assignmentId": [2]
+      "firstName" : "Tiger",
+      "middleName": "Lion",
+      "lastName" : "Woods",
+      "accessLevel": "COLLECTIONS_AGENT"
+    },
+    {
+      "id": 3,
+      "firstName" : "Tom",
+      "middleName": null,
+      "lastName" : "Harding",
+      "accessLevel": "TELLER_AGENT"
     }
   ],
   "assignments": [
     {
+      "employeeId": 2,
       "id": 1,
       "isComplete": false,
       "title": "Assignment 1 title",
       "description": "This is the description for reminder 1",
-      "customerAccountId": 1,
       "link": null,
       "time": "3:45 PM - 4:45 PM"
     },
     {
+      "employeeId": 2,
       "id": 2,
       "isComplete": false,
       "title": "Assignment 2 title",
       "description": "This is the description for reminder 1",
-      "customerAccountId": 1,
       "link": null,
       "time": "3:45 PM - 4:45 PM"
     },
     {
+      "employeeId": 1,
       "id": 3,
       "isComplete": false,
       "title": "Assignment 3 title",
       "description": "This is the description for reminder 1",
-      "customerAccountId": 1,
       "link": null,
       "time": "3:45 PM - 4:45 PM"
     }
   ],
   "reminders": [
     {
+      "employeeId": 1,
       "id": 1,
       "isComplete": false,
       "title": "Reminder 3 title",
@@ -63,6 +63,7 @@
       "time": "3:45 PM - 4:45 PM"
     },
     {
+      "employeeId": 2,
       "id": 2,
       "isComplete": false,
       "title": "Reminder 3 title",
@@ -72,6 +73,7 @@
       "time": "3:45 PM - 4:45 PM"
     },
     {
+      "employeeId": 1,
       "id": 3,
       "isComplete": false,
       "title": "Reminder 3 title",
@@ -81,34 +83,10 @@
       "time": "3:45 PM - 4:45 PM"
     }
   ],
-  "globalProducts": [
-    {
-      "id": 1,
-      "title": "Home",
-      "icon": "M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75M12,15C13.5,15 16.5,15.75 16.5,17.25V18H7.5V17.25C7.5,15.75 10.5,15 12,15Z"
-    },
-    {
-      "id": 2,
-      "title": "Teller Drawer",
-      "icon": "M15,14V11H18V9L22,12.5L18,16V14H15M14,7.7V9H2V7.7L8,4L14,7.7M7,10H9V15H7V10M3,10H5V15H3V10M13,10V12.5L11,14.3V10H13M9.1,16L8.5,16.5L10.2,18H2V16H9.1M17,15V18H14V20L10,16.5L14,13V15H17Z"
-    }
-  ],
-
-  "adminProducts": [
-    {
-      "id": 1,
-      "title": "System Setup",
-      "icon": "M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75M12,15C13.5,15 16.5,15.75 16.5,17.25V18H7.5V17.25C7.5,15.75 10.5,15 12,15Z"
-    },
-    {
-      "id": 2,
-      "title": "GOLDViewPlus",
-      "icon": "M3,13H7V23H3V13M10,14H14V23H10V14M17,9H21V23H17V9M17,1H21V5H20V3.06L11.97,11.09L8,7.12L3.4,11.72L2.34,10.66L8,5L11.97,8.97L18.94,2H17V1Z"
-    }
-  ],
-
   "customerAccounts": [
     {
+      "assignmentId": 1,
+      "reminderId": 1,
       "id": 1,
       "firstName": "Tom",
       "lastName": "Brady",
@@ -131,6 +109,8 @@
       "notes": null
     },
     {
+      "assignmentId": 2,
+      "reminderId": 2,
       "id": 1,
       "firstName": "Kobe",
       "lastName": "Bryant",
@@ -157,6 +137,7 @@
   
   "loanAccounts": [
     {
+      "customerAcountId": 1,
       "id": 1,
       "loanName": "2017 Chevrolet Tahoe",
       "loanType": "Auto",
@@ -166,6 +147,7 @@
       "loanAccountStatus": "GOOD"
     },
     {
+      "customerAcountId": 1,
       "id": 2,
       "loanName": "1967 Harley",
       "loanType": "Auto",
@@ -175,6 +157,7 @@
       "loanAccountStatus": "DELINQUENT"
     },
     {
+      "customerAcountId": 2,
       "id": 3,
       "loanName": "2018 Polaris Razor",
       "loanType": "Auto",
@@ -184,6 +167,7 @@
       "loanAccountStatus": "GOOD"
     },
     {
+      "customerAcountId": 2,
       "id": 4,
       "loanName": "Bryant Hollywood Mansion",
       "loanType": "Home",

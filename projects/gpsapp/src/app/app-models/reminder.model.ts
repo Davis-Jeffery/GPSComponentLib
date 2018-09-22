@@ -7,7 +7,6 @@ export class Reminder {
     public title: string,
     public description: string,
     public attatchedAccount?: CustomerAccount,
-    public link?: string,
     public time?: string,
   ) {}
 }

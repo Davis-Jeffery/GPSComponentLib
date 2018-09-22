@@ -1,7 +1,6 @@
 <div class="gpcl--site-frame">
-  <gps-app-main-nav [appsSidebar]="appsSidebar" [reminders]="reminders"></gps-app-main-nav>
+  <gps-app-main-nav [appsSidebar]="appsSidebar" [assignments]="assignments" [reminders]="reminders"></gps-app-main-nav>
   <mat-sidenav-container class="gpcl--main-body-content">
-
     <mat-sidenav role="navigation" class="sidebar-nav-container" [opened]="true" #appsSidebar mode="side" fixedTopGap="64">
       <gps-apps-sidebar [employeeName]="fullName" [employeeRole]="accessLevel">
         <mat-nav-list gpcl-nav-list>
