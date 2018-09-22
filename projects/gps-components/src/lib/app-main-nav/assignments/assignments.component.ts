@@ -4,15 +4,15 @@ import {
   Input,
   Inject,
   ViewChild,
-  ElementRef,
-} from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+  ElementRef
+} from "@angular/core";
+import { MatDialog } from "@angular/material";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 
 @Component({
-  selector: 'gps-assignments',
-  templateUrl: './assignments.component.html',
-  styleUrls: ['./assignments.component.scss'],
+  selector: "gps-assignments",
+  templateUrl: "./assignments.component.html",
+  styleUrls: ["./assignments.component.scss"]
 })
 export class AssignmentsComponent implements OnInit {
   @Input()
@@ -25,9 +25,9 @@ export class AssignmentsComponent implements OnInit {
   @Input()
   minHeight: string;
   @Input()
-  height = '400px';
+  height = "400px";
   @Input()
-  width = '500px';
+  width = "500px";
   @Input()
   assignments: Array<any>;
   @Input()
@@ -38,34 +38,46 @@ export class AssignmentsComponent implements OnInit {
   ngOnInit() {}
 
   openDialog() {
+    for (var key in this.dialog.openDialogs) {
+      if (this.dialog.openDialogs[key].id != "assignments-dialog") {
+        this.dialog.openDialogs[key].close();
+      }
+
+      if (this.dialog.openDialogs[key].id === "assignments-dialog") {
+        this.dialog.openDialogs[key].close();
+        return;
+      }
+    }
+
     this.dialog.open(AssignmentsOverlayComponent, {
       data: {
         data: this.assignments,
-        title: 'Assignments',
+        title: "Assignments"
       },
       maxWidth: this.maxWidth,
       minWidth: this.minWidth,
       width: this.width,
       position: {
-        top: '68px',
-        right: '16px',
+        top: "68px",
+        right: "16px"
       },
-      id: 'assignents',
+      id: "assignments-dialog",
       autoFocus: false,
-      hasBackdrop: false,
+      hasBackdrop: false
     });
   }
 }
+
 export class Description {
   constructor(public descriptionText: string, public isSeeMore: boolean) {}
 }
 
 @Component({
-  selector: 'gps-assignments-overlay',
-  templateUrl: './overlay-assignments.component.html',
+  selector: "gps-assignments-overlay",
+  templateUrl: "./overlay-assignments.component.html"
 })
 export class AssignmentsOverlayComponent implements OnInit {
-  @ViewChild('assignmentsRef')
+  @ViewChild("assignmentsRef")
   assignmentsElement: ElementRef;
   public overlayDataItems: Array<any>;
   public stringLength: string;
@@ -73,7 +85,7 @@ export class AssignmentsOverlayComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AssignmentsOverlayComponent>,
-    @Inject(MAT_DIALOG_DATA) public overlayData,
+    @Inject(MAT_DIALOG_DATA) public overlayData
   ) {
     this.overlayDataItems = overlayData.data;
   }
