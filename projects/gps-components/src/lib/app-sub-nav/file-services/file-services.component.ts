@@ -1,6 +1,13 @@
-import { Component, OnInit, Input } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  Inject,
+  ViewChild,
+  ElementRef
+} from "@angular/core";
 import { MatDialog } from "@angular/material";
-import { NavOverlayComponent } from "../../nav-overlay/nav-overlay.component";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 
 @Component({
   selector: "gps-file-services",
@@ -27,7 +34,7 @@ export class FileServicesComponent implements OnInit {
       }
     }
 
-    this.dialog.open(NavOverlayComponent, {
+    this.dialog.open(OverlayFileServicesComponent, {
       id: "file-services-dialog",
       width: this.width,
       autoFocus: false,
@@ -43,5 +50,34 @@ export class FileServicesComponent implements OnInit {
         right: "16px"
       }
     });
+  }
+}
+
+export class Description {
+  constructor(public descriptionText: string, public isSeeMore: boolean) {}
+}
+
+@Component({
+  selector: "gps-overlay-file-services",
+  templateUrl: "./overlay-file-services.component.html"
+})
+export class OverlayFileServicesComponent implements OnInit {
+  @ViewChild("assignmentsRef")
+  assignmentsElement: ElementRef;
+  public overlayDataItems: Array<any>;
+  public stringLength: string;
+  public descriptions: Array<Description> = [];
+
+  constructor(
+    public dialogRef: MatDialogRef<OverlayFileServicesComponent>,
+    @Inject(MAT_DIALOG_DATA) public overlayData
+  ) {
+    this.overlayDataItems = overlayData.data;
+  }
+
+  ngOnInit() {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

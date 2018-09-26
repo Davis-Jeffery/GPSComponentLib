@@ -3,7 +3,10 @@ import {
   OverlayCustomerContactComponent
 } from "./app-sub-nav/customer-contact/customer-contact.component";
 import { CustomerNotesComponent } from "./app-sub-nav/customer-notes/customer-notes.component";
-import { FileServicesComponent } from "./app-sub-nav/file-services/file-services.component";
+import {
+  FileServicesComponent,
+  OverlayFileServicesComponent
+} from "./app-sub-nav/file-services/file-services.component";
 import { AppSubNavComponent } from "./app-sub-nav/app-sub-nav.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -35,6 +38,7 @@ import {
 } from "./app-main-nav/apps-sidebar/apps-sidebar.component";
 import { ToPrettyPipe } from "./pipes/to-pretty.pipe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { InputModule } from "./input-combo/input-combo.module";
 
 @NgModule({
   imports: [
@@ -44,7 +48,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     BrowserAnimationsModule,
     LibMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputModule
   ],
   declarations: [
     GpsComponentsComponent,
@@ -55,6 +60,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AssignmentsOverlayComponent,
     RemindersOverlayComponent,
     OverlayCustomerContactComponent,
+    OverlayFileServicesComponent,
     TableComponent,
     NavOverlayComponent,
     AppSubNavComponent,
@@ -73,7 +79,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     NavOverlayComponent,
     AssignmentsOverlayComponent,
     RemindersOverlayComponent,
-    OverlayCustomerContactComponent
+    OverlayCustomerContactComponent,
+    OverlayFileServicesComponent
   ],
   exports: [
     GpsComponentsComponent,
@@ -87,7 +94,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     GpclNavItemTextDirective,
     GpclNavItemComponent,
     ToPrettyPipe,
-    AppSubNavComponent
+    AppSubNavComponent,
+    InputModule
   ]
 })
 export class GpsComponentsModule {}

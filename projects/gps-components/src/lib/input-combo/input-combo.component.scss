@@ -1,0 +1,86 @@
+@mixin beforeBorder {
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 0px 2px 2px 0;
+    border: 2px solid rgb(25, 118, 210);
+  }
+}
+
+.gpcl-input-combo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-top: 16px;
+
+  // &:hover {
+  //   button {
+  //     @include beforeBorder();
+  //     background-color: rgba(25, 118, 210, 0.12);
+  //   }
+
+  //   .mat-form-field-outline-end {
+  //     border-right: none;
+  //     border-radius: 0px;
+  //     border-width: 2px;
+  //     border-color: rgb(25, 118, 210);
+  //   }
+  //   .mat-form-field-outline-start {
+  //     border-width: 2px;
+  //     border-color: rgb(25, 118, 210);
+  //   }
+  // }
+
+  .mat-form-field-infix {
+    padding: 0 0 10px 0;
+    border-top-width: 10px;
+  }
+
+  .mat-form-field-outline {
+    top: 0;
+    height: 36px;
+  }
+
+  .mat-form-field-outline-end {
+    border-radius: 0px;
+  }
+
+  .mat-form-field-wrapper {
+    padding: 0;
+  }
+
+  .input-container {
+    height: 36px;
+    flex-grow: 1;
+  }
+
+  .mat-select-arrow-wrapper {
+    transform: none;
+  }
+
+  button {
+    position: relative;
+    flex-shrink: 0;
+    min-width: 110px;
+    color: rgb(25, 118, 210);
+    fill: rgb(25, 118, 210);
+    border-radius: 0px 2px 2px 0;
+
+    .svg-container {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+
+    // &:focus {
+    //   @include beforeBorder();
+    // }
+  }
+}
