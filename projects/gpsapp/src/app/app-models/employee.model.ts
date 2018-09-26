@@ -5,7 +5,7 @@ import { Product } from './product.model';
 
 export class Employee {
   constructor(
-    public employeeId: string,
+    public id: number,
     public firstName: string,
     public middleName: string,
     public lastName: string,

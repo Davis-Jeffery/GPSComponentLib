@@ -1,0 +1,10 @@
+<div class="gpcl--icon-overlay">
+  <div mat-dialog-title class="header">
+    <ng-content select="span[gpcl-nav-Overlay-header-title], 
+                            h1[gpcl-nav-Overlay-header-title]">
+    </ng-content>
+    <ng-content select="a[gpcl-nav-overlay-header-action], button[gpcl-nav-overlay-header-action]"></ng-content>
+  </div>
+  <ng-content select="mat-dialog-content[gpcl-nav-overlay-content]"></ng-content>
+  <ng-content select="mat-dialog-actions[gpcl-nav-overlay-actions]"></ng-content>
+</div>

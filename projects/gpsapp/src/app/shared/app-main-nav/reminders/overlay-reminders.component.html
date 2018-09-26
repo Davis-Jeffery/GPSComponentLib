@@ -1,0 +1,22 @@
+<gpcl-nav-overlay>
+  <span gpcl-nav-Overlay-header-title>Remidners</span>
+  <a mat-button color="primary" gpcl-nav-overlay-header-action>Create Reminder</a>
+  <mat-dialog-content gpcl-nav-overlay-content>
+    <gpcl-nav-overlay-list-item *ngFor="let reminder of reminders; let i = index">
+      <span gpcl-list-item-title>{{reminder.title}}</span>
+      <span gpcl-list-item-right-sub-text>{{reminder.time}}</span>
+      <a *ngIf="reminder.customerAccount" gpcl-list-item-title-sub-text>{{reminder.customerAccount.firstName + ' ' +
+        reminder.customerAccount.lastName}}</a>
+      <gpcl-nav-overlay-description>
+        {{ (descriptions[i].descriptionText.length > 100 && !descriptions[i].isSeeMore) ?
+        (descriptions[i].descriptionText | slice: 0 : 100 ) + '...' : (descriptions[i].descriptionText) }}
+        <a *ngIf="descriptions[i].descriptionText.length > 100" (click)="descriptions[i].isSeeMore =! descriptions[i].isSeeMore">
+          Show <span *ngIf="descriptions[i].isSeeMore">Less</span><span *ngIf="!descriptions[i].isSeeMore">More</span>
+        </a>
+      </gpcl-nav-overlay-description>
+    </gpcl-nav-overlay-list-item>
+  </mat-dialog-content>
+  <mat-dialog-actions gpcl-nav-overlay-actions>
+    <button mat-stroked-button [matDialogClose]="true" color="primary">View/manage All</button>
+  </mat-dialog-actions>
+</gpcl-nav-overlay>

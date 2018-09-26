@@ -5,6 +5,7 @@ import { DepositAccount } from './deposit-account.model';
 
 export class CustomerAccount {
   constructor(
+    public id: number,
     public firstName: string,
     public lastName: string,
     public socialSecurityNumber: string,

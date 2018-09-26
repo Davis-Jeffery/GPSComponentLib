@@ -1,0 +1,180 @@
+{
+  "employees" : [
+      {
+      "id": 1,
+      "firstName" : "Michael",
+      "middleName": "B.",
+      "lastName" : "Jordan",
+      "accessLevel": "ADMIN"
+    },
+    {
+      "id": 2,
+      "firstName" : "Tiger",
+      "middleName": "Lion",
+      "lastName" : "Woods",
+      "accessLevel": "COLLECTIONS_AGENT"
+    },
+    {
+      "id": 3,
+      "firstName" : "Tom",
+      "middleName": null,
+      "lastName" : "Harding",
+      "accessLevel": "TELLER_AGENT"
+    }
+  ],
+  "assignments": [
+    {
+      "employeeId": 2,
+      "id": 1,
+      "isComplete": false,
+      "title": "Assignment 1 title",
+      "description": "This is the description for reminder 1",
+      "link": null,
+      "time": "3:45 PM - 4:45 PM"
+    },
+    {
+      "employeeId": 2,
+      "id": 2,
+      "isComplete": false,
+      "title": "Assignment 2 title",
+      "description": "This is the description for reminder 1",
+      "link": null,
+      "time": "3:45 PM - 4:45 PM"
+    },
+    {
+      "employeeId": 1,
+      "id": 3,
+      "isComplete": false,
+      "title": "Assignment 3 title",
+      "description": "This is the description for reminder 1",
+      "link": null,
+      "time": "3:45 PM - 4:45 PM"
+    }
+  ],
+  "reminders": [
+    {
+      "employeeId": 1,
+      "id": 1,
+      "isComplete": false,
+      "title": "Reminder 3 title",
+      "description": "This is the description for reminder 1",
+      "customerAccountId": 2,
+      "link": null,
+      "time": "3:45 PM - 4:45 PM"
+    },
+    {
+      "employeeId": 2,
+      "id": 2,
+      "isComplete": false,
+      "title": "Reminder 3 title",
+      "description": "This is the description for reminder 1",
+      "customerAccountId": 2,
+      "link": null,
+      "time": "3:45 PM - 4:45 PM"
+    },
+    {
+      "employeeId": 1,
+      "id": 3,
+      "isComplete": false,
+      "title": "Reminder 3 title",
+      "description": "This is the description for reminder 1",
+      "customerAccountId": 2,
+      "link": null,
+      "time": "3:45 PM - 4:45 PM"
+    }
+  ],
+  "customerAccounts": [
+    {
+      "assignmentId": 1,
+      "reminderId": 1,
+      "id": 1,
+      "firstName": "Tom",
+      "lastName": "Brady",
+      "socialSecurityNumber": "666-66-6666",
+      "addresses": [
+        {
+          "streetOne": "1080 E 700 N",
+          "city": "Provo",
+          "state": "Utah",
+          "zipcode": "84660"
+        },
+        {
+          "streetOne": "111 drewery lane",
+          "city": "New York City",
+          "state": "New York",
+          "zipcode": "90210"
+        }
+      ],
+      "middleName": "The",
+      "notes": null
+    },
+    {
+      "assignmentId": 2,
+      "reminderId": 2,
+      "id": 1,
+      "firstName": "Kobe",
+      "lastName": "Bryant",
+      "socialSecurityNumber": "555-55-5555",
+      "addresses": [
+        {
+          "streetOne": "1080 E 700 N",
+          "city": "Provo",
+          "state": "Utah",
+          "zipcode": "84660"
+        },
+        {
+          "streetOne": "111 drewery lane",
+          "city": "New York City",
+          "state": "New York",
+          "zipcode": "90210"
+        }
+      ],
+      "middleName": "The",
+      "notes": null,
+      "loanAccounts": []
+    }
+  ],
+  
+  "loanAccounts": [
+    {
+      "customerAcountId": 1,
+      "id": 1,
+      "loanName": "2017 Chevrolet Tahoe",
+      "loanType": "Auto",
+      "balance": 32000,
+      "rateApr": 4.23,
+      "PaymentDueDate": "24",
+      "loanAccountStatus": "GOOD"
+    },
+    {
+      "customerAcountId": 1,
+      "id": 2,
+      "loanName": "1967 Harley",
+      "loanType": "Auto",
+      "balance": 12000,
+      "rateApr": 6.23,
+      "PaymentDueDate": "12",
+      "loanAccountStatus": "DELINQUENT"
+    },
+    {
+      "customerAcountId": 2,
+      "id": 3,
+      "loanName": "2018 Polaris Razor",
+      "loanType": "Auto",
+      "balance": 22000,
+      "rateApr": 8.23,
+      "PaymentDueDate": "24",
+      "loanAccountStatus": "GOOD"
+    },
+    {
+      "customerAcountId": 2,
+      "id": 4,
+      "loanName": "Bryant Hollywood Mansion",
+      "loanType": "Home",
+      "balance": 10000000,
+      "rateApr": 4.23,
+      "PaymentDueDate": "24",
+      "loanAccountStatus": "BANKRUPT"
+    }
+  ]
+}

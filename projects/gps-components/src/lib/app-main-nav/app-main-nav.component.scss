@@ -1,8 +1,8 @@
-@import "../../../lib-atom/partials/_sizes.scss";
-@import "../../../lib-atom/partials/_buttons.scss";
-@import "../../../lib-atom/partials/_nav-overlay.scss";
-@import "./_app-main-nav-theme.scss";
-@import "~@angular/material/theming";
+@import '../../../lib-atom/partials/_sizes.scss';
+@import '../../../lib-atom/partials/_buttons.scss';
+@import '../../../lib-atom/partials/_nav-overlay.scss';
+@import './_app-main-nav-theme.scss';
+@import '~@angular/material/theming';
 
 .gpcl--main-header-container {
   display: flex;
@@ -27,6 +27,31 @@
   }
   .gpcl--icon-spacing {
     margin-right: rem(12);
+    color: white;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+    svg {
+      fill: white;
+      height: rem(24);
+      width: rem(24);
+    }
+    button {
+      transition: all 0.1s ease-in-out;
+      border: 1px solid #1976d2;
+      &:hover {
+        background: rgba(white, 0.25);
+      }
+      &.active,
+      :focus {
+        border: 1px solid white;
+        background: rgba(white, 0.1);
+        &:hover {
+          background: rgba(white, 0.1);
+        }
+      }
+    }
   }
 
   .end-icons {

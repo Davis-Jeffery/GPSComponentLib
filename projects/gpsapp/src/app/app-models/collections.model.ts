@@ -1,6 +1,6 @@
 export class Collections {
   constructor(
-    public id: string,
+    public id: number,
     public isComplete: boolean,
     public firstName: string,
     public lastName: string,
