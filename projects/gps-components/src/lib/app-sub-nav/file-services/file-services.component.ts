@@ -2,13 +2,11 @@ import {
   Component,
   OnInit,
   Input,
-  Inject,
   ViewChild,
-  ElementRef
+  ElementRef,
+  Inject
 } from "@angular/core";
-import { MatDialog } from "@angular/material";
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
-
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 @Component({
   selector: "gps-file-services",
   templateUrl: "./file-services.component.html",
@@ -23,33 +21,7 @@ export class FileServicesComponent implements OnInit {
   ngOnInit() {}
 
   openDialog() {
-    for (var key in this.dialog.openDialogs) {
-      if (this.dialog.openDialogs[key].id != "file-services-dialog") {
-        this.dialog.openDialogs[key].close();
-      }
-
-      if (this.dialog.openDialogs[key].id === "file-services-dialog") {
-        this.dialog.openDialogs[key].close();
-        return;
-      }
-    }
-
-    this.dialog.open(OverlayFileServicesComponent, {
-      id: "file-services-dialog",
-      width: this.width,
-      autoFocus: false,
-      hasBackdrop: false,
-
-      data: {
-        title: "File Attachments",
-        seeAllButton: true
-      },
-
-      position: {
-        top: "124px",
-        right: "16px"
-      }
-    });
+    console.log("hit");
   }
 }
 

@@ -14,20 +14,12 @@ import { GpsComponentsComponent } from "./gps-components.component";
 import { TableComponent } from "./tables/table.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LibMaterialModule } from "./lib-material.module";
-import { AppMainNavComponent } from "./app-main-nav/app-main-nav.component";
 import {
-  RemindersComponent,
-  RemindersOverlayComponent
-} from "./app-main-nav/reminders/reminders.component";
-import {
-  AssignmentsComponent,
-  AssignmentsOverlayComponent
-} from "./app-main-nav/assignments/assignments.component";
-
-import { ShellSearchComponent } from "./app-main-nav/shell-search/shell-search.component";
+  GpclAppMainNavComponent,
+  GpclOverlayIconDirective
+} from "./app-main-nav/app-main-nav.component";
 import { A11yModule } from "@angular/cdk/a11y";
 import { CommonModule } from "@angular/common";
-import { NavOverlayComponent } from "./nav-overlay/nav-overlay.component";
 import {
   AppsSidebarComponent,
   GpclNavSectionLabelDirective,
@@ -38,8 +30,8 @@ import {
 } from "./app-main-nav/apps-sidebar/apps-sidebar.component";
 import { ToPrettyPipe } from "./pipes/to-pretty.pipe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { InputModule } from "./input-combo/input-combo.module";
-
+import { GpclNavOverlayModule } from "./nav-overlay-new/gpcl-nav-overlay.module";
+import { GpclAppMainNavModule } from "./app-main-nav/app-main-nav.module";
 @NgModule({
   imports: [
     A11yModule,
@@ -49,53 +41,49 @@ import { InputModule } from "./input-combo/input-combo.module";
     LibMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    InputModule
+    //my modules
+    GpclNavOverlayModule,
+    GpclAppMainNavModule
   ],
   declarations: [
     GpsComponentsComponent,
-    AppMainNavComponent,
-    RemindersComponent,
-    ShellSearchComponent,
-    AssignmentsComponent,
-    AssignmentsOverlayComponent,
-    RemindersOverlayComponent,
     OverlayCustomerContactComponent,
     OverlayFileServicesComponent,
     TableComponent,
-    NavOverlayComponent,
     AppSubNavComponent,
     FileServicesComponent,
     CustomerContactComponent,
     CustomerNotesComponent,
+    ToPrettyPipe,
+
+    // sidebar split module
     AppsSidebarComponent,
     GpclNavSectionLabelDirective,
     GpclNavListDirective,
     GpclNavItemIconDirective,
     GpclNavItemTextDirective,
-    GpclNavItemComponent,
-    ToPrettyPipe
+    GpclNavItemComponent
   ],
-  entryComponents: [
-    NavOverlayComponent,
-    AssignmentsOverlayComponent,
-    RemindersOverlayComponent,
-    OverlayCustomerContactComponent,
-    OverlayFileServicesComponent
-  ],
+  entryComponents: [OverlayCustomerContactComponent],
   exports: [
     GpsComponentsComponent,
-    AppMainNavComponent,
+    OverlayFileServicesComponent,
     TableComponent,
-    AppsSidebarComponent,
     AppSubNavComponent,
+    ToPrettyPipe,
+    AppSubNavComponent,
+
+    // sidebar split module
+    AppsSidebarComponent,
     GpclNavSectionLabelDirective,
     GpclNavListDirective,
     GpclNavItemIconDirective,
     GpclNavItemTextDirective,
     GpclNavItemComponent,
-    ToPrettyPipe,
-    AppSubNavComponent,
-    InputModule
+
+    GpclAppMainNavModule,
+    GpclNavOverlayModule,
+    LibMaterialModule
   ]
 })
 export class GpsComponentsModule {}

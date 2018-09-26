@@ -2,7 +2,7 @@ import { CustomerAccount } from './customer-account.model';
 
 export class Assignment {
   constructor(
-    public id: string,
+    public id: number,
     public isComplete: boolean,
     public title: string,
     public description: string,

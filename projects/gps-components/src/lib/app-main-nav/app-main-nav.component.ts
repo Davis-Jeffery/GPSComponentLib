@@ -1,21 +1,17 @@
-import { Component, Input, ViewEncapsulation } from "@angular/core";
-import { MatDrawer } from "@angular/material";
+import { Component, Input, ViewEncapsulation, Directive } from '@angular/core';
+import { MatDrawer } from '@angular/material';
 
 @Component({
-  selector: "gps-app-main-nav",
-  templateUrl: "./app-main-nav.component.html",
-  styleUrls: ["./app-main-nav.component.scss"],
-  encapsulation: ViewEncapsulation.None
+  selector: 'gpcl-main-nav',
+  templateUrl: './app-main-nav.component.html',
+  styleUrls: ['./app-main-nav.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class AppMainNavComponent {
+export class GpclAppMainNavComponent {
   @Input()
-  background = "primary";
+  background = 'primary';
   @Input()
-  institutionName = "Institution Name";
-  @Input()
-  reminders: Array<any>;
-  @Input()
-  assignments: Array<any>;
+  institutionName = 'Institution Name';
   @Input()
   appsSidebar: MatDrawer;
 
@@ -25,3 +21,15 @@ export class AppMainNavComponent {
     this.appsSidebar.toggle();
   }
 }
+
+@Directive({
+  selector: 'gpcl-overlay-icon',
+  host: { class: 'gpcl--icon-spacing' },
+})
+export class GpclOverlayIconDirective {}
+
+@Directive({
+  selector: 'gpcl-main-nav-middle',
+  host: { class: 'search-inputs' },
+})
+export class GpclMainNavMiddleDirective {}
