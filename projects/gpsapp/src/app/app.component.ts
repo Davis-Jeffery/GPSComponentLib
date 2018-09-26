@@ -42,54 +42,55 @@ export class AppComponent implements OnInit {
     this.employeeService
       .getEmployeeAccount(this.employeeId)
       .subscribe(employee => {
-        this.assignmentsService
-          .getAllEmpoyeeAssignments(this.employeeId)
-          .subscribe(assignments => {
-            assignments.forEach(x => {
-              this.assignments.push(
-                new Assignment(
-                  x.id,
-                  x.isComplete,
-                  x.title,
-                  x.description,
-                  null,
-                  x.time,
-                ),
-              );
-            });
-          });
+        this.employee = employee;
+        // this.assignmentsService
+        //   .getAllEmpoyeeAssignments(this.employeeId)
+        //   .subscribe(assignments => {
+        //     assignments.forEach(x => {
+        //       this.assignments.push(
+        //         new Assignment(
+        //           x.id,
+        //           x.isComplete,
+        //           x.title,
+        //           x.description,
+        //           null,
+        //           x.time,
+        //         ),
+        //       );
+        //     });
+        //   });
 
-        this.remindersService
-          .getAllEmpoyeeReminders(this.employeeId)
-          .subscribe(reminders => {
-            reminders.forEach(reminder => {
-              this.remindersService
-                .getAttachedCustomerForReminder(reminder.id)
-                .subscribe(account => {
-                  this.customerAccount = account;
-                });
-              this.reminders.push(
-                new Reminder(
-                  reminder.id,
-                  reminder.isComplete,
-                  reminder.title,
-                  reminder.description,
-                  this.customerAccount,
-                  reminder.time,
-                ),
-              );
-            });
-          });
-        this.employee = new Employee(
-          employee.id,
-          employee.firstName,
-          employee.middleName,
-          employee.lastName,
-          employee.accessLevel,
-          getGlobalProductsByAccessLevel(employee.accessLevel),
-          getAdminProductsByAccessLevel(employee.accessLevel),
-          this.reminders,
-        );
+        // this.remindersService
+        //   .getAllEmpoyeeReminders(this.employeeId)
+        //   .subscribe(reminders => {
+        //     reminders.forEach(reminder => {
+        //       this.remindersService
+        //         .getAttachedCustomerForReminder(reminder.id)
+        //         .subscribe(account => {
+        //           this.customerAccount = account;
+        //         });
+        //       this.reminders.push(
+        //         new Reminder(
+        //           reminder.id,
+        //           reminder.isComplete,
+        //           reminder.title,
+        //           reminder.description,
+        //           this.customerAccount,
+        //           reminder.time,
+        //         ),
+        //       );
+        //     });
+        //   });
+        // this.employee = new Employee(
+        //   employee.id,
+        //   employee.firstName,
+        //   employee.middleName,
+        //   employee.lastName,
+        //   employee.accessLevel,
+        //   getGlobalProductsByAccessLevel(employee.accessLevel),
+        //   getAdminProductsByAccessLevel(employee.accessLevel),
+        //   this.reminders,
+        // );
 
         this.accessLevel = this.employee.accessLevel;
         this.globalProducts = this.employee.globalProducts;

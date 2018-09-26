@@ -10,6 +10,7 @@ import { CustomerAccountService } from './services/customer-account.service';
 import { EmployeeService } from './services/employee.service';
 import { RemindersService } from './services/reminders.service';
 import { HttpClientModule } from '@angular/common/http';
+import { GpsMainNavModule } from './shared/app-main-nav/main-nav.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     CustomAngularMaterialModule,
     HttpClientModule,
+    GpsMainNavModule,
   ],
   providers: [
     AccessLevelService,
