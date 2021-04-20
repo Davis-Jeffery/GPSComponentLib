@@ -1,13 +1,1 @@
-# GPSComponentLib
-A Component Library for GPS
-# Installing solution
-you cannot run npm install, because it will try and install the app-components whichisn’t built yet — and you can’t build the components until you’ve installed the npm packages. The solution is to edit package.json to remove the reference to the dist/gps-components, delete package-lock.json, then run
-1. `npm install`
-1. `ng build gps-components`
-1. `npm install dist/gps-components`
-# Create Components
-1. generate your reusable component `ng g c componentName — project=gps-components`
-1. add your generated component to gps-component.module.ts  in the `exports` array.
-1. in the root of gpsprojects directory run `ng build gps-components` 
-1. to test go to gpsapp and add your componets elements tag to any html file. `<componentName></componentNmae>`
-1. serve app to view `ng serve gpsapp` and view at localhost:4200
+"1  \t     49.99\t\t582.37\r\n2  \t     23.68\t\t571.17\r\n3  \t     23.68\t\t559.97\r\n4  \t     23.68\t\t548.77\r\n5  \t     23.68\t\t537.57\r\n6  \t     23.68\t\t526.37\r\n7  \t     23.68\t\t515.18\r\n8  \t     23.68\t\t503.97\r\n9  \t     23.68\t\t492.77\r\n10 \t     23.68\t\t481.57\r\n11 \t     23.68\t\t470.38\r\n12 \t     23.68\t\t459.17\r\n13 \t     23.68\t\t447.97\r\n14 \t     23.68\t\t436.78\r\n15 \t     23.68\t\t425.58\r\n16 \t     23.68\t\t414.38\r\n17 \t     23.68\t\t403.17\r\n18 \t     23.68\t\t391.98\r\n19 \t     23.68\t\t380.78\r\n20 \t     23.68\t\t369.58\r\n21 \t     23.68\t\t358.38\r\n22 \t     23.68\t\t347.18\r\n23 \t     23.68\t\t335.98\r\n24 \t     23.68\t\t324.79\r\n25 \t     23.68\t\t313.58\r\n26 \t     23.68\t\t302.38\r\n27 \t     23.68\t\t291.18\r\n28 \t     23.68\t\t279.99\r\n29 \t     23.68\t\t268.79\r\n30 \t     23.68\t\t257.58\r\n31 \t     23.68\t\t246.39\r\n32 \t     23.68\t\t235.19\r\n33 \t     23.68\t\t223.99\r\n34 \t     23.68\t\t212.78\r\n35 \t     23.68\t\t201.59\r\n36 \t     23.68\t\t190.39\r\n37 \t     23.68\t\t179.19\r\n38 \t     23.68\t\t167.99\r\n39 \t     23.68\t\t156.79\r\n40 \t     23.68\t\t145.59\r\n41 \t     23.68\t\t134.39\r\n42 \t     23.68\t\t123.20\r\n43 \t     23.68\t\t111.99\r\n44 \t     23.68\t\t100.79\r\n45 \t     23.68\t\t  89.60\r\n46 \t     23.68\t\t  78.40\r\n47 \t     23.68\t\t  67.19\r\n48 \t     23.68\t\t  56.00\r\n49 \t     23.68\t\t  44.80\r\n50 \t     23.68\t\t  33.60\r\n51 \t     23.68\t\t  22.39\r\n52 \t     23.68\t\t  11.20\r\n53 \t     23.50\t\t    0.00\r\n"
